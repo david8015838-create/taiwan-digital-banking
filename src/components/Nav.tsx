@@ -78,6 +78,7 @@ export function Nav() {
               { href: '#charts', label: '圖表' },
               { href: '#brands', label: '品牌' },
               { href: '#trends', label: '趨勢' },
+              { href: '#bankee', label: 'Bankee分析' },
             ].map(({ href, label }) => (
               <li key={href}>
                 <a

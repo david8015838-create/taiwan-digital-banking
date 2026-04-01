@@ -6,7 +6,13 @@ import {
   cardRewards,
   transferRankings,
   marketTrends,
+  bankeeStrengths,
+  bankeeWeaknesses,
+  bankeeOpportunities,
   type BankType,
+  type BankeeStrength,
+  type BankeeWeakness,
+  type BankeeOpportunity,
 } from './data/banks'
 
 // ── Brand positions derived from banks data ─────────────────────────────────
@@ -805,6 +811,273 @@ function TrendsSection() {
   )
 }
 
+// ── Bankee Analysis Section ───────────────────────────────────────────────────
+const SEVERITY_CONFIG: Record<BankeeWeakness['severity'], { label: string; color: string; bg: string; border: string }> = {
+  high:   { label: '高風險', color: '#f87171', bg: 'rgba(248,113,113,0.08)', border: 'rgba(248,113,113,0.25)' },
+  medium: { label: '中風險', color: '#fb923c', bg: 'rgba(251,146,60,0.08)',  border: 'rgba(251,146,60,0.25)'  },
+  low:    { label: '低風險', color: '#fbbf24', bg: 'rgba(251,191,36,0.08)',  border: 'rgba(251,191,36,0.25)'  },
+}
+
+const PRIORITY_CONFIG: Record<BankeeOpportunity['priority'], { color: string; bg: string; border: string }> = {
+  '高優先': { color: '#34d399', bg: 'rgba(52,211,153,0.08)',  border: 'rgba(52,211,153,0.25)'  },
+  '中優先': { color: '#60a5fa', bg: 'rgba(96,165,250,0.08)',  border: 'rgba(96,165,250,0.25)'  },
+  '低優先': { color: '#a78bfa', bg: 'rgba(167,139,250,0.08)', border: 'rgba(167,139,250,0.25)' },
+}
+
+function StrengthCard({ item }: { item: BankeeStrength }) {
+  return (
+    <div
+      style={{
+        background: 'var(--surface)',
+        border: '1px solid rgba(52,211,153,0.2)',
+        borderRadius: 'var(--radius)',
+        padding: '20px',
+        transition: 'border-color 0.2s var(--easing)',
+      }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(52,211,153,0.5)' }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(52,211,153,0.2)' }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+        <span style={{ fontSize: '22px' }} role="img" aria-hidden="true">{item.icon}</span>
+        <span style={{ fontWeight: 600, fontSize: '14px', color: 'var(--foreground)' }}>{item.title}</span>
+      </div>
+      <p style={{ fontSize: '13px', color: 'var(--foreground-muted)', lineHeight: 1.6 }}>{item.desc}</p>
+    </div>
+  )
+}
+
+function WeaknessCard({ item }: { item: BankeeWeakness }) {
+  const cfg = SEVERITY_CONFIG[item.severity]
+  return (
+    <div
+      style={{
+        background: 'var(--surface)',
+        border: `1px solid ${cfg.border}`,
+        borderRadius: 'var(--radius)',
+        padding: '20px',
+        transition: 'border-color 0.2s var(--easing)',
+      }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = cfg.color + '60' }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = cfg.border }}
+    >
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '10px', marginBottom: '10px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <span style={{ fontSize: '22px' }} role="img" aria-hidden="true">{item.icon}</span>
+          <span style={{ fontWeight: 600, fontSize: '14px', color: 'var(--foreground)' }}>{item.title}</span>
+        </div>
+        <span
+          style={{
+            fontSize: '10px',
+            fontWeight: 600,
+            fontFamily: "'IBM Plex Mono', monospace",
+            padding: '2px 8px',
+            borderRadius: '4px',
+            background: cfg.bg,
+            color: cfg.color,
+            border: `1px solid ${cfg.border}`,
+            whiteSpace: 'nowrap',
+            flexShrink: 0,
+          }}
+        >
+          {cfg.label}
+        </span>
+      </div>
+      <p style={{ fontSize: '13px', color: 'var(--foreground-muted)', lineHeight: 1.6 }}>{item.desc}</p>
+    </div>
+  )
+}
+
+function OpportunityCard({ item }: { item: BankeeOpportunity }) {
+  const cfg = PRIORITY_CONFIG[item.priority]
+  return (
+    <div
+      style={{
+        background: 'var(--surface)',
+        border: `1px solid ${cfg.border}`,
+        borderRadius: 'var(--radius)',
+        padding: '20px',
+        transition: 'border-color 0.2s var(--easing)',
+      }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = cfg.color + '60' }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = cfg.border }}
+    >
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '10px', marginBottom: '10px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <span style={{ fontSize: '22px' }} role="img" aria-hidden="true">{item.icon}</span>
+          <span style={{ fontWeight: 600, fontSize: '14px', color: 'var(--foreground)' }}>{item.title}</span>
+        </div>
+        <span
+          style={{
+            fontSize: '10px',
+            fontWeight: 600,
+            fontFamily: "'IBM Plex Mono', monospace",
+            padding: '2px 8px',
+            borderRadius: '4px',
+            background: cfg.bg,
+            color: cfg.color,
+            border: `1px solid ${cfg.border}`,
+            whiteSpace: 'nowrap',
+            flexShrink: 0,
+          }}
+        >
+          {item.priority}
+        </span>
+      </div>
+      <p style={{ fontSize: '13px', color: 'var(--foreground-muted)', lineHeight: 1.6 }}>{item.desc}</p>
+    </div>
+  )
+}
+
+function BankeeSection() {
+  return (
+    <section id="bankee" style={{ padding: '64px 0' }}>
+      <div className="container">
+        <SectionHeader
+          tag="BANKEE ANALYSIS"
+          title="Bankee 深度分析"
+          desc="遠東銀行 Bankee 數位帳戶優勢、劣勢與競爭力提升建議"
+        />
+
+        {/* Stats bar */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '12px',
+            marginBottom: '40px',
+            background: 'var(--surface)',
+            border: '1px solid var(--border)',
+            borderRadius: 'var(--radius)',
+            padding: '20px 24px',
+          }}
+        >
+          {[
+            { label: '新戶利率', value: '2.6%', sub: '6個月', color: '#34d399' },
+            { label: '舊戶利率', value: '1.435%', sub: '一般', color: '#fb923c' },
+            { label: '社群圈加碼', value: '+1.6%', sub: '邀友加碼', color: '#60a5fa' },
+            { label: '跨轉次數', value: '6次', sub: '每月', color: '#f87171' },
+            { label: '優惠額度', value: '無上限', sub: '5萬門檻', color: '#a78bfa' },
+          ].map(({ label, value, sub, color }) => (
+            <div key={label} style={{ flex: '1 1 120px', textAlign: 'center' }}>
+              <div style={{ fontSize: '10px', color: 'var(--foreground-muted)', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{label}</div>
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '18px', fontWeight: 700, color }}>{value}</div>
+              <div style={{ fontSize: '11px', color: 'var(--foreground-muted)', marginTop: '2px' }}>{sub}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Strengths */}
+        <div style={{ marginBottom: '40px' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              marginBottom: '16px',
+            }}
+          >
+            <div
+              style={{
+                width: '4px',
+                height: '20px',
+                background: 'linear-gradient(180deg, #34d399, #059669)',
+                borderRadius: '2px',
+                flexShrink: 0,
+              }}
+            />
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#34d399' }}>
+              核心優勢 ({bankeeStrengths.length} 項)
+            </h3>
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+              gap: '12px',
+            }}
+          >
+            {bankeeStrengths.map((item) => (
+              <StrengthCard key={item.title} item={item} />
+            ))}
+          </div>
+        </div>
+
+        {/* Weaknesses */}
+        <div style={{ marginBottom: '40px' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              marginBottom: '16px',
+            }}
+          >
+            <div
+              style={{
+                width: '4px',
+                height: '20px',
+                background: 'linear-gradient(180deg, #f87171, #dc2626)',
+                borderRadius: '2px',
+                flexShrink: 0,
+              }}
+            />
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#f87171' }}>
+              主要劣勢 ({bankeeWeaknesses.length} 項)
+            </h3>
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+              gap: '12px',
+            }}
+          >
+            {bankeeWeaknesses.map((item) => (
+              <WeaknessCard key={item.title} item={item} />
+            ))}
+          </div>
+        </div>
+
+        {/* Opportunities */}
+        <div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              marginBottom: '16px',
+            }}
+          >
+            <div
+              style={{
+                width: '4px',
+                height: '20px',
+                background: 'linear-gradient(180deg, #60a5fa, #2563eb)',
+                borderRadius: '2px',
+                flexShrink: 0,
+              }}
+            />
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#60a5fa' }}>
+              競爭力提升建議 ({bankeeOpportunities.length} 項)
+            </h3>
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+              gap: '12px',
+            }}
+          >
+            {bankeeOpportunities.map((item) => (
+              <OpportunityCard key={item.title} item={item} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ── Footer ────────────────────────────────────────────────────────────────────
 function Footer() {
   const sources = [
@@ -928,6 +1201,7 @@ function App() {
         <ChartsSection />
         <BrandsSection />
         <TrendsSection />
+        <BankeeSection />
       </main>
       <Footer />
     </>

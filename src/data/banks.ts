@@ -524,6 +524,52 @@ export const transferRankings: TransferRanking[] = [
   { bank: '中華郵政', product: '數位帳戶', type: 'other', count: 66, display: '66次' },
 ].sort((a, b) => b.count - a.count) as TransferRanking[]
 
+export interface BankeeStrength {
+  icon: string
+  title: string
+  desc: string
+}
+
+export interface BankeeWeakness {
+  icon: string
+  title: string
+  desc: string
+  severity: 'high' | 'medium' | 'low'
+}
+
+export interface BankeeOpportunity {
+  icon: string
+  title: string
+  desc: string
+  priority: '高優先' | '中優先' | '低優先'
+}
+
+export const bankeeStrengths: BankeeStrength[] = [
+  { icon: '👥', title: '社群圈加碼機制', desc: '全台唯一以社群圈概念設計的數位帳戶，邀請好友加入社群圈可額外加碼1.6%利率，打造差異化護城河' },
+  { icon: '🏢', title: '遠東集團後盾', desc: '遠東銀行為遠東集團旗下，集團涵蓋百貨、遠傳電信、遠東SOGO等，具備多元生態圈整合潛力' },
+  { icon: '💰', title: '優惠額度無上限', desc: '新戶6個月2.6%利率無存款上限（5萬門檻），相較部分競爭者限制更彈性' },
+  { icon: '📱', title: 'App 設計友善', desc: 'Bankee App介面設計以年輕族群為主要客群，社群功能整合於金融服務中，體驗具差異化' },
+  { icon: '🔒', title: '民營銀行穩定性', desc: '遠東銀行成立逾60年，兼具民營銀行彈性與百年企業穩健，監管合規有保障' },
+]
+
+export const bankeeWeaknesses: BankeeWeakness[] = [
+  { icon: '🔄', title: '跨轉次數嚴重不足', desc: '每月僅6次免費跨行轉帳，遠低於市場平均（LINE Bank 50次、元大 99次、郵局 66次），重度轉帳用戶體驗差', severity: 'high' },
+  { icon: '📉', title: '舊戶利率競爭力弱', desc: '舊戶利率僅1.435%，低於市場平均（華南 2.3%、台灣銀行 2.075%），長期留客誘因不足', severity: 'high' },
+  { icon: '🤝', title: '社群機制門檻高', desc: '社群圈加碼需邀請好友，對無社交網絡的用戶實際利率僅1%，實際獲益門檻相較競爭者更複雜', severity: 'medium' },
+  { icon: '🌐', title: '生態圈整合有限', desc: '缺乏如 LINE Pay（LINE Bank）、全聯PX Pay（將來銀行）等強力第三方支付整合，消費場景受限', severity: 'medium' },
+  { icon: '📣', title: '品牌知名度偏低', desc: 'Bankee在純網銀品牌戰中存在感弱，缺乏爆炸性行銷事件，年輕族群首選率偏低', severity: 'medium' },
+  { icon: '💳', title: '簽帳卡回饋未進榜', desc: '簽帳金融卡回饋率在台灣市場未進前五名（永豐5%、LINE Bank 4%等），消費回饋競爭力待加強', severity: 'low' },
+]
+
+export const bankeeOpportunities: BankeeOpportunity[] = [
+  { icon: '🚀', title: '大幅提升跨轉次數', desc: '建議提升至至少20次/月，可設計任務制（完成條件達30次），直接消除用戶最大痛點', priority: '高優先' },
+  { icon: '📈', title: '優化舊戶利率結構', desc: '引入動態任務利率（如台企銀Hokii模式），讓活躍舊戶維持2%+利率，降低流失率', priority: '高優先' },
+  { icon: '🛒', title: '整合遠東集團生態圈', desc: '深度串聯遠東SOGO百貨、遠傳電信、愛買等集團資產，打造「消費即加碼」場景，差異化競爭', priority: '中優先' },
+  { icon: '🤖', title: '強化AI理財功能', desc: '跟進台新Richart小查罐趨勢，推出AI智能存款建議、消費分析、自動化儲蓄，吸引年輕族群', priority: '中優先' },
+  { icon: '👨‍👩‍👧', title: '社群圈機制升級', desc: '將社群圈從「邀請好友」升級為「興趣社群」或「職場社群」，降低社交門檻，擴大適用族群', priority: '中優先' },
+  { icon: '💡', title: '推出限時爆款新戶優惠', desc: '參考聯邦15%/王道8.8%模式，設計具話題性的新戶限時高利活動，提升品牌曝光與獲客', priority: '低優先' },
+]
+
 export const marketTrends = [
   {
     icon: '📈',
