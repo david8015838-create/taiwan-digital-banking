@@ -187,10 +187,239 @@ function HeroSection() {
   )
 }
 
+// ── Compare Panel ─────────────────────────────────────────────────────────────
+function ComparePanel({
+  selected,
+  onClear,
+}: {
+  selected: string[]
+  onClear: () => void
+}) {
+  const [collapsed, setCollapsed] = useState(false)
+  const selectedBanks = banks.filter((b) => selected.includes(b.name))
+
+  const maxNewRate = Math.max(...selectedBanks.map((b) => b.newRateNum))
+  const maxTransfer = Math.max(...selectedBanks.map((b) => b.transferNum))
+
+  const fields: Array<{ label: string; key: keyof typeof selectedBanks[0]; isNumericKey?: 'newRateNum' | 'transferNum' }> = [
+    { label: '帳戶產品', key: 'product' },
+    { label: '新戶利率', key: 'newRate', isNumericKey: 'newRateNum' },
+    { label: '舊戶利率', key: 'oldRate' },
+    { label: '利率上限', key: 'rateLimit' },
+    { label: '跨轉次數', key: 'transferCount', isNumericKey: 'transferNum' },
+    { label: '跨提次數', key: 'withdrawCount' },
+    { label: '特色', key: 'feature' },
+  ]
+
+  return (
+    <div
+      role="region"
+      aria-label="銀行比較面板"
+      style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        background: '#0d1117',
+        borderTop: '1px solid rgba(37,99,235,0.4)',
+        boxShadow: '0 -8px 32px rgba(0,0,0,0.5)',
+        transition: 'transform 0.2s ease',
+      }}
+    >
+      {/* Panel header */}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '10px 20px',
+          borderBottom: collapsed ? 'none' : '1px solid rgba(255,255,255,0.06)',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <span
+            style={{
+              background: 'rgba(37,99,235,0.15)',
+              border: '1px solid rgba(37,99,235,0.3)',
+              borderRadius: '6px',
+              padding: '2px 10px',
+              fontSize: '12px',
+              color: '#60a5fa',
+              fontFamily: "'IBM Plex Mono', monospace",
+            }}
+          >
+            已選 {selected.length} 家
+          </span>
+          <span style={{ fontSize: '13px', color: 'var(--foreground-muted)' }}>
+            Side-by-Side 比較分析
+          </span>
+        </div>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <button
+            type="button"
+            onClick={onClear}
+            style={{
+              padding: '5px 12px',
+              borderRadius: '6px',
+              border: '1px solid rgba(239,68,68,0.3)',
+              background: 'rgba(239,68,68,0.08)',
+              color: '#f87171',
+              fontSize: '12px',
+              cursor: 'pointer',
+            }}
+          >
+            清除選擇
+          </button>
+          <button
+            type="button"
+            onClick={() => setCollapsed((c) => !c)}
+            aria-expanded={!collapsed}
+            style={{
+              padding: '5px 12px',
+              borderRadius: '6px',
+              border: '1px solid var(--border)',
+              background: 'transparent',
+              color: 'var(--foreground-muted)',
+              fontSize: '12px',
+              cursor: 'pointer',
+            }}
+          >
+            {collapsed ? '展開 ▲' : '收起 ▼'}
+          </button>
+        </div>
+      </div>
+
+      {/* Panel body */}
+      {!collapsed && (
+        <div style={{ overflowX: 'auto', maxHeight: '340px', overflowY: 'auto' }}>
+          <table
+            style={{
+              width: '100%',
+              borderCollapse: 'collapse',
+              fontSize: '13px',
+              minWidth: `${120 + selectedBanks.length * 160}px`,
+            }}
+          >
+            <thead>
+              <tr>
+                <th
+                  style={{
+                    padding: '8px 16px',
+                    textAlign: 'left',
+                    color: 'var(--foreground-muted)',
+                    fontSize: '11px',
+                    fontWeight: 500,
+                    width: '110px',
+                    position: 'sticky',
+                    left: 0,
+                    background: '#0d1117',
+                    borderBottom: '1px solid rgba(255,255,255,0.06)',
+                  }}
+                >
+                  指標
+                </th>
+                {selectedBanks.map((bank) => (
+                  <th
+                    key={bank.name}
+                    style={{
+                      padding: '8px 16px',
+                      textAlign: 'center',
+                      borderBottom: '1px solid rgba(255,255,255,0.06)',
+                      borderLeft: '1px solid rgba(255,255,255,0.06)',
+                      minWidth: '150px',
+                    }}
+                  >
+                    <div style={{ fontWeight: 700, color: 'var(--foreground)', fontSize: '13px' }}>
+                      {bank.name}
+                    </div>
+                    <span
+                      className={`tag-type tag-${bank.type}`}
+                      style={{ fontSize: '10px', marginTop: '2px', display: 'inline-block' }}
+                    >
+                      {TYPE_LABELS[bank.type]}
+                    </span>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {fields.map(({ label, key, isNumericKey }) => (
+                <tr key={label}>
+                  <td
+                    style={{
+                      padding: '8px 16px',
+                      color: 'var(--foreground-muted)',
+                      fontSize: '11px',
+                      fontWeight: 500,
+                      whiteSpace: 'nowrap',
+                      position: 'sticky',
+                      left: 0,
+                      background: '#0d1117',
+                      borderBottom: '1px solid rgba(255,255,255,0.04)',
+                    }}
+                  >
+                    {label}
+                  </td>
+                  {selectedBanks.map((bank) => {
+                    const val = bank[key] as string | number
+                    const numVal = isNumericKey ? (bank[isNumericKey] as number) : null
+                    const isMax =
+                      isNumericKey === 'newRateNum'
+                        ? numVal !== null && numVal > 0 && numVal === maxNewRate
+                        : isNumericKey === 'transferNum'
+                        ? numVal !== null && numVal > 0 && numVal === maxTransfer
+                        : false
+
+                    return (
+                      <td
+                        key={bank.name}
+                        style={{
+                          padding: '8px 16px',
+                          textAlign: 'center',
+                          borderBottom: '1px solid rgba(255,255,255,0.04)',
+                          borderLeft: '1px solid rgba(255,255,255,0.06)',
+                          color: isMax ? '#4ade80' : 'var(--foreground)',
+                          fontWeight: isMax ? 700 : 400,
+                        }}
+                      >
+                        {isMax ? (
+                          <span
+                            style={{
+                              background: 'rgba(74,222,128,0.12)',
+                              border: '1px solid rgba(74,222,128,0.3)',
+                              borderRadius: '5px',
+                              padding: '2px 8px',
+                              color: '#4ade80',
+                              fontSize: '12px',
+                              fontWeight: 700,
+                            }}
+                          >
+                            {val}
+                          </span>
+                        ) : (
+                          <span style={{ color: val === '—' ? 'rgba(255,255,255,0.2)' : undefined }}>
+                            {val || '—'}
+                          </span>
+                        )}
+                      </td>
+                    )
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── Bank Compare Table ────────────────────────────────────────────────────────
 function BankCompareSection() {
   const [filter, setFilter] = useState<'all' | BankType>('all')
   const [sortBy, setSortBy] = useState<'rate' | 'transfer'>('rate')
+  const [selectedBanks, setSelectedBanks] = useState<string[]>([])
 
   const filtered = banks
     .filter((b) => filter === 'all' || b.type === filter)
@@ -207,13 +436,23 @@ function BankCompareSection() {
     { value: 'other', label: '其他' },
   ]
 
+  function toggleBank(name: string) {
+    setSelectedBanks((prev) => {
+      if (prev.includes(name)) {
+        return prev.filter((n) => n !== name)
+      }
+      if (prev.length >= 5) return prev
+      return [...prev, name]
+    })
+  }
+
   return (
-    <section id="compare" style={{ padding: '64px 0' }}>
+    <section id="compare" style={{ padding: '64px 0', paddingBottom: selectedBanks.length >= 2 ? '360px' : '64px' }}>
       <div className="container">
         <SectionHeader
           tag="COMPARE"
           title="互動銀行比較表"
-          desc="點擊篩選類別，或切換排序方式"
+          desc="勾選 2~5 家銀行，頁面底部將出現 Side-by-Side 比較面板"
         />
 
         {/* Filter + Sort Controls */}
@@ -286,10 +525,25 @@ function BankCompareSection() {
           </div>
         </div>
 
+        {selectedBanks.length > 0 && (
+          <div
+            style={{
+              marginBottom: '12px',
+              fontSize: '12px',
+              color: '#60a5fa',
+              fontFamily: "'IBM Plex Mono', monospace",
+            }}
+          >
+            已選 {selectedBanks.length}/5：{selectedBanks.join('、')}
+            {selectedBanks.length >= 5 && <span style={{ color: '#f87171', marginLeft: '8px' }}>已達上限</span>}
+          </div>
+        )}
+
         <div className="table-wrap">
           <table>
             <thead>
               <tr>
+                <th style={{ width: '36px', textAlign: 'center' }}>比較</th>
                 <th>銀行</th>
                 <th>帳戶</th>
                 <th>類型</th>
@@ -310,36 +564,63 @@ function BankCompareSection() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((bank) => (
-                <tr key={`${bank.name}-${bank.product}`}>
-                  <td style={{ fontWeight: 600, whiteSpace: 'nowrap' }}>{bank.name}</td>
-                  <td className="td-muted">{bank.product}</td>
-                  <td>
-                    <span className={`tag-type tag-${bank.type}`}>
-                      {TYPE_LABELS[bank.type]}
-                    </span>
-                  </td>
-                  <td>
-                    {bank.newRateNum > 0 ? (
-                      <span className={getRateBadgeClass(bank.newRateNum)}>
-                        {bank.newRate}
+              {filtered.map((bank) => {
+                const isSelected = selectedBanks.includes(bank.name)
+                const isDisabled = !isSelected && selectedBanks.length >= 5
+                return (
+                  <tr
+                    key={`${bank.name}-${bank.product}`}
+                    style={{
+                      borderLeft: isSelected ? '3px solid #2563EB' : '3px solid transparent',
+                      background: isSelected ? 'rgba(37,99,235,0.06)' : undefined,
+                      transition: 'background 0.15s ease, border-color 0.15s ease',
+                    }}
+                  >
+                    <td style={{ textAlign: 'center', padding: '8px 6px' }}>
+                      <input
+                        type="checkbox"
+                        aria-label={`選擇 ${bank.name} 進行比較`}
+                        checked={isSelected}
+                        disabled={isDisabled}
+                        onChange={() => toggleBank(bank.name)}
+                        style={{
+                          width: '16px',
+                          height: '16px',
+                          cursor: isDisabled ? 'not-allowed' : 'pointer',
+                          accentColor: '#2563EB',
+                          opacity: isDisabled ? 0.3 : 1,
+                        }}
+                      />
+                    </td>
+                    <td style={{ fontWeight: 600, whiteSpace: 'nowrap' }}>{bank.name}</td>
+                    <td className="td-muted">{bank.product}</td>
+                    <td>
+                      <span className={`tag-type tag-${bank.type}`}>
+                        {TYPE_LABELS[bank.type]}
                       </span>
-                    ) : (
-                      <span className="td-dash">{bank.newRate}</span>
-                    )}
-                  </td>
-                  <td className="td-muted">{bank.oldRate}</td>
-                  <td className="td-muted">{bank.rateLimit}</td>
-                  <td>
-                    {bank.transferNum > 0 ? (
-                      <span className="count-badge">{bank.transferCount}</span>
-                    ) : (
-                      <span className="td-dash">{bank.transferCount}</span>
-                    )}
-                  </td>
-                  <td className="feature-text">{bank.feature}</td>
-                </tr>
-              ))}
+                    </td>
+                    <td>
+                      {bank.newRateNum > 0 ? (
+                        <span className={getRateBadgeClass(bank.newRateNum)}>
+                          {bank.newRate}
+                        </span>
+                      ) : (
+                        <span className="td-dash">{bank.newRate}</span>
+                      )}
+                    </td>
+                    <td className="td-muted">{bank.oldRate}</td>
+                    <td className="td-muted">{bank.rateLimit}</td>
+                    <td>
+                      {bank.transferNum > 0 ? (
+                        <span className="count-badge">{bank.transferCount}</span>
+                      ) : (
+                        <span className="td-dash">{bank.transferCount}</span>
+                      )}
+                    </td>
+                    <td className="feature-text">{bank.feature}</td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
@@ -355,6 +636,13 @@ function BankCompareSection() {
           共 {filtered.length} 筆 · 顯示 {filter === 'all' ? '全部' : TYPE_LABELS[filter as BankType]}
         </p>
       </div>
+
+      {selectedBanks.length >= 2 && (
+        <ComparePanel
+          selected={selectedBanks}
+          onClear={() => setSelectedBanks([])}
+        />
+      )}
     </section>
   )
 }
