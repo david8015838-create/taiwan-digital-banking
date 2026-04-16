@@ -1583,59 +1583,121 @@ tr:hover td{background:var(--surface)}
     <h3 style="margin-bottom:6px;color:var(--purple)">A｜異業合作機會地圖</h3>
     <p style="color:var(--fg-m);font-size:13px;margin-bottom:28px">依合作潛力與 Bankee 差異化匹配度排序，共 6 大類 18 個具體合作對象。</p>
 
+    <!-- 現有合作狀態總覽 -->
+    <div style="margin-bottom:40px">
+      <h3 style="margin-bottom:16px;color:var(--fg-m);font-size:15px">現有合作狀態核實（2026 Q1）</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>合作對象</th><th>現狀</th><th>合作形式</th><th>行銷建議</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>幣託 BitoEX</strong></td>
+              <td><span class="tag tag-yellow">⚠ 已合作・暫停新戶</span></td>
+              <td>「加密貨幣專屬帳戶」聯名，2024/12/2 已暫停新用戶申請，既有用戶權益保留</td>
+              <td style="color:var(--orange)">→ 優先任務：協商重新開放或推出第二版方案</td>
+            </tr>
+            <tr>
+              <td><strong>MAX Exchange</strong></td>
+              <td><span class="tag tag-green">✓ 現行合作</span></td>
+              <td>投資交割帳戶，2025/10/29 重新開放，入金免跨行費、出金 0 元、App 一鍵入金</td>
+              <td style="color:var(--green)">→ 深化：爭取 MAX App 首頁獨家入口 + 聯合行銷活動</td>
+            </tr>
+            <tr>
+              <td><strong>遠傳 / SOGO / 愛買</strong></td>
+              <td><span class="tag tag-blue">◎ 已有信用卡回饋合作</span></td>
+              <td>HAPPY GO 信用卡刷卡加點（SOGO 單筆滿 $2,000 送 60 點，活動至 2026/3/31）；非 Bankee 數位帳戶直接整合</td>
+              <td style="color:#60a5fa">→ 升級：將信用卡合作延伸至 Bankee 數位帳戶開戶誘因</td>
+            </tr>
+            <tr>
+              <td><strong>亞東證券</strong></td>
+              <td><span class="tag tag-green">✓ 現行合作</span></td>
+              <td>Bankee 可直接作為亞東證券數位交割帳戶，已整合開戶流程</td>
+              <td style="color:var(--green)">→ 行銷強化：在證券開戶流程中主動推薦 Bankee</td>
+            </tr>
+            <tr>
+              <td><strong>BZNK P2P 平台</strong></td>
+              <td><span class="tag tag-green">✓ 現行合作</span></td>
+              <td>金流由遠東銀行管理，投資人透過 Bankee 帳戶媒合 P2B 企業融資</td>
+              <td style="color:var(--green)">→ 行銷切入：以「讓閒置存款幫企業賺錢」訴求推廣</td>
+            </tr>
+            <tr>
+              <td><strong>Join 智慧信貸</strong></td>
+              <td><span class="tag tag-green">✓ 現行合作</span></td>
+              <td>遠東集團子公司元寶金科，Bankee 帳戶資金可參與智慧借貸媒合</td>
+              <td style="color:var(--green)">→ 行銷強化：將 Join 作為 Bankee 存款活化工具主打</td>
+            </tr>
+            <tr style="background:rgba(239,68,68,0.04)">
+              <td><strong>ACE Exchange</strong></td>
+              <td><span class="tag tag-red">✗ 不適合合作</span></td>
+              <td>ACE 已更名「潤通數位創新」，2025/3/31 未申請 VASP 登記，金管會已禁止其經營，存入金服務停止</td>
+              <td style="color:var(--red)">→ 排除，勿洽談</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <!-- Category 1: Far Eastern Group -->
     <div style="margin-bottom:36px">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <div style="width:4px;height:20px;background:linear-gradient(180deg,#f97316,#eab308);border-radius:2px;flex-shrink:0"></div>
-        <h4 style="color:var(--orange)">① 遠東集團內部生態圈（最高優先・零媒介成本）</h4>
-        <span class="tag tag-orange">集團資源</span>
+        <h4 style="color:var(--orange)">① 遠東集團內部生態圈（升級現有基礎・零媒介成本）</h4>
+        <span class="tag tag-blue">信用卡合作已有・數位帳戶待升級</span>
       </div>
       <div class="grid-3" style="margin-bottom:12px">
         <div class="card" style="border-color:rgba(249,115,22,0.3);padding:20px">
-          <div style="font-size:24px;margin-bottom:10px">📱</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+            <div style="font-size:22px">📱</div>
+            <span class="tag tag-blue" style="font-size:10px">信用卡合作現有</span>
+          </div>
           <h4 style="margin-bottom:6px">遠傳電信 FarEasTone</h4>
           <div style="font-size:12px;color:var(--fg-m);margin-bottom:12px">用戶基數：900 萬+</div>
           <div style="display:flex;flex-direction:column;gap:6px;font-size:12px">
-            <div>• 月帳單頁面嵌入 Bankee 開戶 Banner</div>
-            <div>• 遠傳 App 首頁推廣「開 Bankee 享遠傳折扣」</div>
-            <div>• 辦門號同步開帳戶，業務員獎勵制</div>
-            <div>• friDay 購物消費 Bankee 回饋加碼</div>
+            <div style="color:var(--green)">✓ 現有：HAPPY GO 信用卡消費加點</div>
+            <div style="color:var(--orange)">→ 升級：月帳單嵌入 Bankee 數位帳戶開戶 Banner</div>
+            <div style="color:var(--orange)">→ 新增：辦門號同步開帳戶，業務員獎勵制</div>
+            <div style="color:var(--orange)">→ 新增：friDay 購物消費 Bankee 回饋加碼</div>
           </div>
           <div style="margin-top:12px;padding:8px;background:rgba(249,115,22,0.08);border-radius:6px;font-size:11px">
-            <strong style="color:var(--orange)">預估 CPA：$80–200</strong>｜觸及：700萬潛在用戶
+            <strong style="color:var(--orange)">新增 CPA：$80–200</strong>｜觸及：700萬用戶
           </div>
         </div>
         <div class="card" style="border-color:rgba(249,115,22,0.3);padding:20px">
-          <div style="font-size:24px;margin-bottom:10px">🏬</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+            <div style="font-size:22px">🏬</div>
+            <span class="tag tag-blue" style="font-size:10px">信用卡合作現有</span>
+          </div>
           <h4 style="margin-bottom:6px">遠東 SOGO 百貨</h4>
-          <div style="font-size:12px;color:var(--fg-m);margin-bottom:12px">全台 7 間、會員人數龐大</div>
+          <div style="font-size:12px;color:var(--fg-m);margin-bottom:12px">全台 7 間、週年慶人潮龐大</div>
           <div style="display:flex;flex-direction:column;gap:6px;font-size:12px">
-            <div>• SOGO 收銀台掃碼開戶送折扣券</div>
-            <div>• SOGO 週年慶「Bankee 帳戶消費加碼 5%」</div>
-            <div>• SOGO 會員 EDM 推廣 Bankee</div>
-            <div>• 聯名信用卡（遠東信用卡 × Bankee 數位帳戶）</div>
+            <div style="color:var(--green)">✓ 現有：信用卡滿額回饋點數至 2026/3/31</div>
+            <div style="color:var(--orange)">→ 升級：週年慶 Bankee 帳戶掃碼開戶送折扣券</div>
+            <div style="color:var(--orange)">→ 新增：SOGO 會員 EDM 推廣 Bankee 數位帳戶</div>
+            <div style="color:var(--orange)">→ 新增：Bankee 帳戶消費 SOGO 加碼 5%（非信用卡）</div>
           </div>
           <div style="margin-top:12px;padding:8px;background:rgba(249,115,22,0.08);border-radius:6px;font-size:11px">
-            <strong style="color:var(--orange)">預估 CPA：$100–250</strong>｜觸及：SOGO 高消費客群
+            <strong style="color:var(--orange)">新增 CPA：$100–250</strong>｜高消費力客群
           </div>
         </div>
         <div class="card" style="border-color:rgba(249,115,22,0.3);padding:20px">
-          <div style="font-size:24px;margin-bottom:10px">🛒</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+            <div style="font-size:22px">🛒</div>
+            <span class="tag tag-blue" style="font-size:10px">信用卡合作現有</span>
+          </div>
           <h4 style="margin-bottom:6px">愛買 / 遠東百貨</h4>
-          <div style="font-size:12px;color:var(--fg-m);margin-bottom:12px">北部量販、中部百貨據點</div>
+          <div style="font-size:12px;color:var(--fg-m);margin-bottom:12px">北部量販、中部百貨</div>
           <div style="display:flex;flex-direction:column;gap:6px;font-size:12px">
-            <div>• 結帳掃碼開戶送購物金 $100</div>
-            <div>• 愛買 App 推播「Bankee 存款加碼活動」</div>
-            <div>• 員工優先開戶計畫（B2B2C）</div>
-            <div>• 遠東集團員工薪資帳戶遷移計畫</div>
+            <div style="color:var(--green)">✓ 現有：信用卡滿額回饋點數活動</div>
+            <div style="color:var(--orange)">→ 升級：結帳掃碼開 Bankee 帳戶送購物金</div>
+            <div style="color:var(--orange)">→ 新增：集團員工薪資帳戶遷移計畫（B2B2C）</div>
           </div>
           <div style="margin-top:12px;padding:8px;background:rgba(249,115,22,0.08);border-radius:6px;font-size:11px">
-            <strong style="color:var(--orange)">預估 CPA：$100–200</strong>｜觸及：集團 10 萬員工 + 消費者
+            <strong style="color:var(--orange)">新增 CPA：$100–200</strong>｜10 萬員工 + 消費者
           </div>
         </div>
       </div>
       <div class="callout-orange callout" style="font-size:13px">
-        <strong>執行建議：</strong>成立「遠東金融生活圈」品牌，讓遠傳、SOGO、愛買、Bankee 四者統一露出。消費者在任一集團品牌的接觸點都能看到 Bankee，形成「遠東族就用 Bankee」的心智。
+        <strong>核心行動：</strong>目前集團合作停在「信用卡層級」，需升級到「Bankee 數位帳戶開戶層級」。建議在下一次集團行銷會議中提案，統一以「遠東金融生活圈」品牌推動四個品牌聯合曝光。
       </div>
     </div>
 
@@ -1643,48 +1705,46 @@ tr:hover td{background:var(--surface)}
     <div style="margin-bottom:36px">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <div style="width:4px;height:20px;background:linear-gradient(180deg,#f97316,#fb923c);border-radius:2px;flex-shrink:0"></div>
-        <h4 style="color:var(--orange)">② 虛擬資產交易所（最高優先・藍海壟斷）</h4>
+        <h4 style="color:var(--orange)">② 虛擬資產交易所（已有合作・重點深化）</h4>
         <span class="tag tag-orange">獨家優勢</span>
       </div>
       <div class="tbl-wrap" style="margin-bottom:12px">
         <table>
           <thead>
-            <tr><th>交易所</th><th>台灣用戶規模</th><th>合作模式</th><th>Bankee 提供</th><th>預估 CPA</th></tr>
+            <tr><th>交易所</th><th>現狀</th><th>現有條件</th><th>下一步行動</th><th>機會 CPA</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>幣託 BitoEX</strong><br><span style="font-size:11px;color:var(--fg-m)">台灣最大合規交易所</span></td>
-              <td style="font-family:'IBM Plex Mono',monospace">150萬+</td>
-              <td>「BitoEX × Bankee 聯名帳戶」獨家出入金優惠、App 內開戶入口</td>
-              <td>3秒出入金、單日500萬上限、開戶獎勵</td>
+              <td><strong>幣託 BitoEX</strong><br><span style="font-size:11px;color:var(--fg-m)">台灣最大合規交易所，150萬+ 用戶</span></td>
+              <td><span class="tag tag-yellow">⚠ 暫停新戶</span></td>
+              <td>聯名加密帳戶已存在，2024/12/2 暫停新申請；現有用戶單日出入金最高 500 萬</td>
+              <td style="color:var(--orange)">協商重啟方案，或推出「BitoEX × Bankee 2.0」升級版；爭取 BitoEX App 開戶流程嵌入</td>
+              <td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-weight:700">$60–130</td>
+            </tr>
+            <tr>
+              <td><strong>MAX Exchange</strong><br><span style="font-size:11px;color:var(--fg-m)">MaiCoin 旗下，80萬+ 用戶</span></td>
+              <td><span class="tag tag-green">✓ 現行合作</span></td>
+              <td>投資交割帳戶，2025/10 重新開放；入金免跨行費、出金 0 元、App 一鍵入金；平日 15:30 前申請隔天到帳</td>
+              <td style="color:var(--green)">深化：爭取 MAX App 首頁獨家 Banner + 聯合行銷活動；推共同推薦碼機制</td>
               <td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-weight:700">$80–150</td>
             </tr>
             <tr>
-              <td><strong>MAX Exchange</strong><br><span style="font-size:11px;color:var(--fg-m)">MaiCoin 旗下</span></td>
-              <td style="font-family:'IBM Plex Mono',monospace">80萬+</td>
-              <td>MAX App 推播「Bankee 出入金零手續費月」聯合行銷</td>
-              <td>免費跨行轉帳配額、推薦碼共享機制</td>
-              <td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-weight:700">$100–200</td>
-            </tr>
-            <tr>
-              <td><strong>ACE Exchange</strong><br><span style="font-size:11px;color:var(--fg-m)">台灣合規交易所</span></td>
-              <td style="font-family:'IBM Plex Mono',monospace">30萬+</td>
-              <td>ACE 首頁 Banner + 新會員開戶流程整合 Bankee</td>
-              <td>出入金速度保證、大額帳戶服務</td>
-              <td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-weight:700">$100–250</td>
-            </tr>
-            <tr>
-              <td><strong>VASP 新上市業者</strong><br><span style="font-size:11px;color:var(--fg-m)">金管會 VASP 登記後新進者</span></td>
-              <td style="font-family:'IBM Plex Mono',monospace">待觀察</td>
-              <td>成為「VASP 友善銀行首選」，主動接觸新申請業者</td>
-              <td>快速 API 對接、合規支援文件</td>
+              <td><strong>VASP 新申請業者</strong><br><span style="font-size:11px;color:var(--fg-m)">金管會 VASP 登記制度上路後</span></td>
+              <td><span class="tag tag-purple">○ 未合作・機會</span></td>
+              <td>現有無合作，但 Bankee 是 VASP 業者最快速可對接的銀行</td>
+              <td style="color:var(--purple)">主動出擊：提供「VASP 友善銀行合作包」，含 API 文件 + 快速對接服務，成為新業者首選</td>
               <td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-weight:700">$50–150</td>
+            </tr>
+            <tr style="background:rgba(239,68,68,0.04);opacity:.7">
+              <td><strong>ACE Exchange</strong></td>
+              <td><span class="tag tag-red">✗ 已停業</span></td>
+              <td colspan="3" style="color:var(--red)">2025/3/31 未申請 VASP 登記，金管會禁止其經營。已更名潤通數位創新，不得接受新客戶。<strong>勿洽談。</strong></td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="callout-orange callout" style="font-size:13px">
-        <strong>談判籌碼：</strong>Bankee 是台灣唯一願意且有能力大量承接 VASP 金流的銀行，交易所需要 Bankee 甚至大於 Bankee 需要它們。應主動要求在交易所 App 開戶流程中嵌入 Bankee 開戶按鈕，並爭取獨家合作期（6–12 個月）。
+        <strong>重點任務：</strong>幣託合作暫停是最大缺口，應優先協商重啟，可提案「幣託 × Bankee 2.0」——加入 MAX 已有的一鍵 App 入金功能，讓幣託合作升級並重新對外宣傳。同步接觸 VASP 新申請業者，鞏固「幣圈首選銀行」地位。
       </div>
     </div>
 
@@ -1692,64 +1752,87 @@ tr:hover td{background:var(--surface)}
     <div style="margin-bottom:36px">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <div style="width:4px;height:20px;background:linear-gradient(180deg,#a78bfa,#818cf8);border-radius:2px;flex-shrink:0"></div>
-        <h4 style="color:var(--purple)">③ 金融科技 & 投資理財平台（中優先）</h4>
-        <span class="tag tag-purple">理財族</span>
+        <h4 style="color:var(--purple)">③ 金融科技 & 投資理財平台</h4>
+        <span class="tag tag-green">集團已整合</span>
+        <span class="tag tag-purple">外部待開發</span>
       </div>
-      <div class="grid-2" style="margin-bottom:12px">
+
+      <!-- 集團已整合 -->
+      <div style="background:rgba(34,197,94,0.04);border:1px solid rgba(34,197,94,0.2);border-radius:var(--radius);padding:16px;margin-bottom:16px">
+        <div style="font-size:11px;color:var(--green);font-family:'IBM Plex Mono',monospace;margin-bottom:10px;font-weight:600">✓ 已整合（集團內部，可強化行銷）</div>
+        <div class="grid-3">
+          <div style="font-size:13px">
+            <strong>亞東證券</strong><br>
+            <span style="color:var(--fg-m)">Bankee 可直接作為交割帳戶，開戶流程已整合。</span><br>
+            <span style="color:var(--green)">→ 行銷強化：在亞東開戶流程主動推薦 Bankee，強調「同時開立、一次搞定」</span>
+          </div>
+          <div style="font-size:13px">
+            <strong>BZNK P2P 企業融資平台</strong><br>
+            <span style="color:var(--fg-m)">金流由遠東銀行管理，Bankee 帳戶作為媒合工具。</span><br>
+            <span style="color:var(--green)">→ 行銷強化：以「讓存款幫企業賺錢、月月領息」訴求推廣</span>
+          </div>
+          <div style="font-size:13px">
+            <strong>Join 智慧信貸（元寶金科）</strong><br>
+            <span style="color:var(--fg-m)">遠東集團子公司，Bankee 帳戶資金可參與智慧借貸媒合。</span><br>
+            <span style="color:var(--green)">→ 行銷強化：作為 Bankee 存款活化工具，強調「存款不只是存放，還能媒合借貸收息」</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 外部新開發 -->
+      <div class="grid-2">
         <div class="card" style="border-color:rgba(167,139,250,0.3);padding:20px">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
             <div>
               <h4>股感 StockFeel / 台股投資平台</h4>
-              <div style="font-size:12px;color:var(--fg-m);margin-top:4px">台灣最大理財內容平台，月活躍用戶 300 萬+</div>
+              <div style="font-size:12px;color:var(--fg-m);margin-top:4px">月活躍用戶 300 萬+｜<span class="tag tag-purple" style="font-size:10px">○ 未合作</span></div>
             </div>
-            <span class="tag tag-purple" style="flex-shrink:0">CPA ~$200</span>
+            <span style="color:var(--purple);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600">CPA ~$200</span>
           </div>
           <div style="font-size:12px;display:flex;flex-direction:column;gap:5px">
-            <div>• 原生文章「投資人的最佳資金停泊帳戶」</div>
-            <div>• 股感 App 首頁合作 Banner（高意向理財族）</div>
-            <div>• 「股市淡季資金搬去 Bankee 存 1.435%」推廣</div>
-          </div>
-        </div>
-        <div class="card" style="border-color:rgba(167,139,250,0.3);padding:20px">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
-            <div>
-              <h4>MoneyDJ / 富果 Fugle / 永豐 API</h4>
-              <div style="font-size:12px;color:var(--fg-m);margin-top:4px">券商、股票 App 生態圈</div>
-            </div>
-            <span class="tag tag-purple" style="flex-shrink:0">CPA ~$220</span>
-          </div>
-          <div style="font-size:12px;display:flex;flex-direction:column;gap:5px">
-            <div>• 對接 API 讓投資人可直接從 Bankee 帳戶劃撥</div>
-            <div>• 「投資淡季資金存 Bankee 1.435% 無上限」聯合推廣</div>
-            <div>• 理財 App 通知：「等待進場？先把資金搬去 Bankee」</div>
+            <div>• 原生文章「投資人股市淡季的最佳資金停泊」</div>
+            <div>• 股感 App Banner（高意向投資族）</div>
+            <div>• 「等待進場？先存 Bankee 1.435% 無上限」</div>
           </div>
         </div>
         <div class="card" style="border-color:rgba(167,139,250,0.3);padding:20px">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
             <div>
               <h4>袋鼠金融 / Money101 / Mr.Market</h4>
-              <div style="font-size:12px;color:var(--fg-m);margin-top:4px">台灣三大金融比較平台</div>
+              <div style="font-size:12px;color:var(--fg-m);margin-top:4px">台灣三大金融比較平台｜<span class="tag tag-purple" style="font-size:10px">○ 未合作</span></div>
             </div>
-            <span class="tag tag-purple" style="flex-shrink:0">CPA ~$150–300</span>
+            <span style="color:var(--purple);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600">CPA $150–300</span>
           </div>
           <div style="font-size:12px;display:flex;flex-direction:column;gap:5px">
-            <div>• 購買「數位帳戶推薦」頁面頂部廣告位</div>
-            <div>• 合作撰寫 Bankee 深度評測（原生廣告）</div>
-            <div>• 確保在各平台比較表中欄位完整且排名靠前</div>
+            <div>• 購買「無上限存款」篩選結果頂部廣告位</div>
+            <div>• 合作深度評測（原生廣告）</div>
+            <div>• 確保虛擬資產特色欄位在比較表中完整呈現</div>
+          </div>
+        </div>
+        <div class="card" style="border-color:rgba(167,139,250,0.3);padding:20px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+            <div>
+              <h4>富果 Fugle / MoneyDJ</h4>
+              <div style="font-size:12px;color:var(--fg-m);margin-top:4px">券商 App 生態圈｜<span class="tag tag-purple" style="font-size:10px">○ 未合作</span></div>
+            </div>
+            <span style="color:var(--purple);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600">CPA ~$220</span>
+          </div>
+          <div style="font-size:12px;display:flex;flex-direction:column;gap:5px">
+            <div>• API 對接讓投資人直接從 Bankee 帳戶劃撥</div>
+            <div>• App 推播：「資金閒置中？存 Bankee 日日計息」</div>
           </div>
         </div>
         <div class="card" style="border-color:rgba(167,139,250,0.3);padding:20px">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
             <div>
               <h4>Pi 拍錢包 / 街口支付</h4>
-              <div style="font-size:12px;color:var(--fg-m);margin-top:4px">台灣主流行動支付，用戶各 500 萬+</div>
+              <div style="font-size:12px;color:var(--fg-m);margin-top:4px">各 500 萬+ 用戶｜<span class="tag tag-purple" style="font-size:10px">○ 未合作・無遠東信用卡整合</span></div>
             </div>
-            <span class="tag tag-purple" style="flex-shrink:0">CPA ~$180–300</span>
+            <span style="color:var(--purple);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600">CPA $180–300</span>
           </div>
           <div style="font-size:12px;display:flex;flex-direction:column;gap:5px">
             <div>• 綁定 Bankee 帳戶作為付款來源享加碼</div>
-            <div>• 聯合活動：Pi/街口 App 推播 Bankee 開戶優惠</div>
-            <div>• 消費資料互通提升信貸核准率（需合規）</div>
+            <div>• 聯合推播 Bankee 開戶優惠給支付 App 用戶</div>
           </div>
         </div>
       </div>
