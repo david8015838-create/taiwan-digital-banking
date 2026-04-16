@@ -1361,6 +1361,63 @@ function BankeeSection() {
             ))}
           </div>
         </div>
+
+        {/* CTA to marketing page */}
+        <a
+          href="/taiwan-digital-banking/bankee-marketing/"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '20px',
+            padding: '28px 32px',
+            background: 'linear-gradient(135deg, rgba(249,115,22,0.12) 0%, rgba(234,179,8,0.08) 100%)',
+            border: '1px solid rgba(249,115,22,0.35)',
+            borderRadius: 'var(--radius)',
+            textDecoration: 'none',
+            marginTop: '8px',
+            transition: 'all 0.2s var(--easing)',
+          }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement
+            el.style.background = 'linear-gradient(135deg, rgba(249,115,22,0.2) 0%, rgba(234,179,8,0.14) 100%)'
+            el.style.borderColor = 'rgba(249,115,22,0.6)'
+            el.style.transform = 'translateY(-2px)'
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement
+            el.style.background = 'linear-gradient(135deg, rgba(249,115,22,0.12) 0%, rgba(234,179,8,0.08) 100%)'
+            el.style.borderColor = 'rgba(249,115,22,0.35)'
+            el.style.transform = 'translateY(0)'
+          }}
+        >
+          <div>
+            <div style={{ fontSize: '11px', fontFamily: "'IBM Plex Mono', monospace", color: '#f97316', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
+              深度行銷分析
+            </div>
+            <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--foreground)', marginBottom: '6px' }}>
+              Bankee 行銷突圍戰略 →
+            </div>
+            <div style={{ fontSize: '13px', color: 'var(--foreground-muted)' }}>
+              五大策略 · CPA $400以下實戰方案 · 目標族群分析 · 國際獎項佐證
+            </div>
+          </div>
+          <div
+            style={{
+              width: '48px',
+              height: '48px',
+              borderRadius: '12px',
+              background: 'linear-gradient(135deg, #f97316, #eab308)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '22px',
+              flexShrink: 0,
+            }}
+          >
+            ⚡
+          </div>
+        </a>
       </div>
     </section>
   )

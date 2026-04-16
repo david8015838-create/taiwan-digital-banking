@@ -109,21 +109,28 @@ export function Nav() {
             ))}
           </ul>
 
-          <span
+          <a
+            href="/taiwan-digital-banking/bankee-marketing/"
             style={{
-              fontSize: '11px',
-              fontFamily: "'IBM Plex Mono', monospace",
-              color: 'var(--accent-green)',
-              background: 'rgba(34,197,94,0.1)',
-              border: '1px solid rgba(34,197,94,0.2)',
-              padding: '3px 8px',
-              borderRadius: '4px',
+              fontSize: '12px',
+              fontWeight: 600,
+              color: '#fff',
+              background: 'linear-gradient(135deg, #f97316, #eab308)',
+              padding: '6px 14px',
+              borderRadius: '8px',
+              textDecoration: 'none',
               whiteSpace: 'nowrap',
               flexShrink: 0,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+              transition: 'opacity 0.15s',
             }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85' }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1' }}
           >
-            2026 Q1
-          </span>
+            ⚡ 行銷突圍戰略
+          </a>
         </div>
       </div>
     </nav>
