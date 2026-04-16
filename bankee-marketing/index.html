@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bankee 行銷突圍戰略 2026 | 台灣數位帳戶研究</title>
+<meta name="description" content="深度分析 Bankee 如何在競爭激烈的台灣數位帳戶市場中脫穎而出，涵蓋虛擬資產藍海、社群病毒行銷、挑戰型信貸等五大突圍策略。"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#020203;--bg-b:#050506;--bg-e:#0a0a0c;
+  --surface:rgba(255,255,255,0.04);--surface-h:rgba(255,255,255,0.07);
+  --fg:#EDEDEF;--fg-m:#8A8F98;
+  --accent:#2563EB;--accent-g:rgba(37,99,235,0.18);
+  --green:#22c55e;--orange:#F97316;--red:#ef4444;--yellow:#eab308;--purple:#a78bfa;--pink:#f472b6;
+  --border:rgba(255,255,255,0.08);--radius:12px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:'IBM Plex Sans',-apple-system,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-b)}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);border-radius:3px}
+
+/* animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,0)}50%{box-shadow:0 0 20px 4px rgba(37,99,235,0.3)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes barGrow{from{width:0}to{width:var(--w)}}
+@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,15px) scale(.97)}}
+
+.fade-up{animation:fadeUp .6s var(--ease) forwards}
+
+/* layout */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(2,2,3,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-box{width:32px;height:32px;background:linear-gradient(135deg,#ff6b35,#f7931e);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.nav-title{font-size:14px;font-weight:600;color:var(--fg);letter-spacing:-.02em}
+.nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+.nav-links a{text-decoration:none;font-size:13px;color:var(--fg-m);padding:6px 12px;border-radius:8px;display:block;transition:all .15s}
+.nav-links a:hover{color:var(--fg);background:var(--surface-h)}
+.nav-tag{font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--orange);background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);padding:3px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.back-link{font-size:12px;color:var(--fg-m);text-decoration:none;display:flex;align-items:center;gap:4px;padding:5px 10px;border:1px solid var(--border);border-radius:6px;transition:all .15s}
+.back-link:hover{color:var(--fg);border-color:rgba(255,255,255,0.2)}
+
+/* section */
+section{padding:80px 0}
+.section-label{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.25);border-radius:100px;padding:4px 14px;font-size:12px;font-family:'IBM Plex Mono',monospace;color:#60a5fa;margin-bottom:20px}
+.section-label .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite}
+h1{font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-.04em;line-height:1.1}
+h2{font-size:clamp(24px,4vw,36px);font-weight:700;letter-spacing:-.03em;line-height:1.2}
+h3{font-size:18px;font-weight:600;letter-spacing:-.02em}
+h4{font-size:14px;font-weight:600;letter-spacing:-.01em}
+p{color:var(--fg-m);line-height:1.7}
+
+/* cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all .2s var(--ease)}
+.card:hover{background:var(--surface-h);border-color:rgba(255,255,255,0.12);transform:translateY(-2px)}
+.card-accent{border-color:rgba(37,99,235,0.35);background:rgba(37,99,235,0.06)}
+.card-green{border-color:rgba(34,197,94,0.35);background:rgba(34,197,94,0.05)}
+.card-orange{border-color:rgba(249,115,22,0.35);background:rgba(249,115,22,0.05)}
+.card-purple{border-color:rgba(167,139,250,0.35);background:rgba(167,139,250,0.05)}
+.card-red{border-color:rgba(239,68,68,0.35);background:rgba(239,68,68,0.05)}
+.card-yellow{border-color:rgba(234,179,8,0.35);background:rgba(234,179,8,0.05)}
+
+/* stat */
+.stat-num{font-size:clamp(28px,4vw,42px);font-weight:700;font-family:'IBM Plex Mono',monospace;letter-spacing:-.03em;line-height:1}
+.stat-label{font-size:12px;color:var(--fg-m);margin-top:6px}
+.stat-sub{font-size:11px;color:var(--fg-m);opacity:.7;margin-top:2px}
+
+/* tag */
+.tag{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;font-family:'IBM Plex Mono',monospace}
+.tag-green{background:rgba(34,197,94,0.12);color:var(--green);border:1px solid rgba(34,197,94,0.2)}
+.tag-orange{background:rgba(249,115,22,0.12);color:var(--orange);border:1px solid rgba(249,115,22,0.2)}
+.tag-blue{background:rgba(37,99,235,0.12);color:#60a5fa;border:1px solid rgba(37,99,235,0.2)}
+.tag-purple{background:rgba(167,139,250,0.12);color:var(--purple);border:1px solid rgba(167,139,250,0.2)}
+.tag-red{background:rgba(239,68,68,0.12);color:var(--red);border:1px solid rgba(239,68,68,0.2)}
+.tag-yellow{background:rgba(234,179,8,0.12);color:var(--yellow);border:1px solid rgba(234,179,8,0.2)}
+
+/* bar */
+.bar-wrap{margin:10px 0}
+.bar-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px}
+.bar-track{height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px;--w:0%;width:0;animation:barGrow 1.2s var(--ease) forwards}
+
+/* divider */
+.divider{height:1px;background:var(--border);margin:0}
+
+/* pill */
+.pill{display:inline-block;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:20px;padding:3px 12px;font-size:12px;color:var(--fg-m)}
+
+/* strategy number */
+.strat-num{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;font-family:'IBM Plex Mono',monospace;flex-shrink:0}
+
+/* award */
+.award-badge{display:flex;align-items:flex-start;gap:14px;padding:18px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface)}
+.award-icon{font-size:28px;flex-shrink:0;margin-top:2px}
+
+/* timeline */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:24px}
+.timeline-dot{position:absolute;left:-26px;top:4px;width:12px;height:12px;border-radius:50%;flex-shrink:0}
+
+/* persona */
+.persona-avatar{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+
+/* progress ring */
+.ring-wrap{position:relative;width:100px;height:100px;flex-shrink:0}
+.ring-wrap svg{transform:rotate(-90deg)}
+.ring-pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;font-family:'IBM Plex Mono',monospace}
+
+/* callout */
+.callout{border-left:3px solid var(--accent);padding:16px 20px;background:rgba(37,99,235,0.06);border-radius:0 var(--radius) var(--radius) 0}
+.callout-green{border-left-color:var(--green);background:rgba(34,197,94,0.06)}
+.callout-orange{border-left-color:var(--orange);background:rgba(249,115,22,0.06)}
+
+/* table */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border)}
+th{text-align:left;padding:12px 16px;font-weight:600;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--fg-m)}
+td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--surface)}
+
+/* hero blob */
+.hero-blob{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:700px;height:350px;background:radial-gradient(ellipse,rgba(249,115,22,0.1) 0%,transparent 70%);pointer-events:none;animation:blob 8s ease-in-out infinite}
+
+/* responsive */
+@media(max-width:768px){
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .nav-links{display:none}
+  h1{font-size:32px}
+  section{padding:50px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/taiwan-digital-banking/" class="nav-logo">
+        <div class="nav-logo-box">B</div>
+        <span class="nav-title">Bankee 行銷突圍戰略</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#overview">市場現況</a></li>
+        <li><a href="#moat">核心護城河</a></li>
+        <li><a href="#strategies">五大策略</a></li>
+        <li><a href="#personas">目標族群</a></li>
+        <li><a href="#campaigns">行銷提案</a></li>
+        <li><a href="#awards">得獎認可</a></li>
+        <li><a href="#roadmap">執行路線</a></li>
+      </ul>
+      <a href="/taiwan-digital-banking/" class="back-link">← 回主報告</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="padding:80px 0 60px;text-align:center;position:relative;overflow:hidden" id="top">
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="container fade-up">
+    <div class="section-label"><span class="dot"></span> 2026 Q1 行銷深度分析</div>
+    <h1 style="margin:16px 0 24px;background:linear-gradient(135deg,#fff 0%,#f97316 60%,#eab308 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+      Bankee 如何<br>脫穎而出？
+    </h1>
+    <p style="font-size:18px;max-width:640px;margin:0 auto 32px;color:var(--fg-m)">
+      在 2,819 萬戶的飽和市場中，Bankee 握有三張罕見王牌：<br>
+      <strong style="color:var(--fg)">專利社群圈 × 虛擬資產霸主 × 挑戰型信貸革命</strong>
+    </p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <span class="tag tag-orange">⚡ 行銷戰略報告</span>
+      <span class="tag tag-green">✓ 權威數據佐證</span>
+      <span class="tag tag-blue">🌏 國際獎項認可</span>
+    </div>
+  </div>
+</section>
+
+<!-- KPI STRIP -->
+<div style="background:var(--bg-e);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 0">
+  <div class="container">
+    <div class="grid-4">
+      <div style="text-align:center;padding:8px">
+        <div class="stat-num" style="color:var(--orange)">2,819<span style="font-size:18px">萬</span></div>
+        <div class="stat-label">台灣數位帳戶總戶數</div>
+        <div class="stat-sub">2025 Q4 金管會統計</div>
+      </div>
+      <div style="text-align:center;padding:8px;border-left:1px solid var(--border)">
+        <div class="stat-num" style="color:var(--yellow)">90<span style="font-size:18px">%+</span></div>
+        <div class="stat-label">台灣虛擬資產金流市占</div>
+        <div class="stat-sub">Bankee 自 2019 年深耕</div>
+      </div>
+      <div style="text-align:center;padding:8px;border-left:1px solid var(--border)">
+        <div class="stat-num" style="color:var(--green)">4<span style="font-size:18px">萬</span></div>
+        <div class="stat-label">社群圈主（線上分行）</div>
+        <div class="stat-sub">2025 Q1，每季增 1,000 家</div>
+      </div>
+      <div style="text-align:center;padding:8px;border-left:1px solid var(--border)">
+        <div class="stat-num" style="color:var(--purple)">3<span style="font-size:18px">項</span></div>
+        <div class="stat-label">2025 年國際金融大獎</div>
+        <div class="stat-sub">Global Finance · Digital Banker</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARKET OVERVIEW -->
+<section id="overview">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 市場現況</div>
+    <h2 style="margin-bottom:12px">競爭白熱化，成長趨緩的市場</h2>
+    <p style="max-width:720px;margin-bottom:48px">2025年台灣數位帳戶年增率15.24%，創九年新低。行銷活動減少、基數過大，競爭者必須<strong style="color:var(--fg)">找到結構性差異</strong>才能逆勢突圍。</p>
+
+    <div class="grid-3" style="margin-bottom:32px">
+      <div class="card">
+        <div style="font-size:22px;margin-bottom:12px">🏦</div>
+        <h4 style="margin-bottom:8px;color:var(--fg-m)">純網銀戰況（2025 Q4）</h4>
+        <div style="margin-top:12px">
+          <div class="bar-wrap">
+            <div class="bar-label"><span>LINE Bank（連線銀行）</span><span style="color:var(--green);font-family:'IBM Plex Mono',monospace">229萬戶</span></div>
+            <div class="bar-track"><div class="bar-fill" style="--w:100%;background:linear-gradient(90deg,#00b300,#00cc00)"></div></div>
+          </div>
+          <div class="bar-wrap">
+            <div class="bar-label"><span>將來銀行</span><span style="color:#60a5fa;font-family:'IBM Plex Mono',monospace">55萬戶</span></div>
+            <div class="bar-track"><div class="bar-fill" style="--w:24%;background:linear-gradient(90deg,#2563EB,#3b82f6)"></div></div>
+          </div>
+          <div class="bar-wrap">
+            <div class="bar-label"><span>樂天銀行</span><span style="color:var(--red);font-family:'IBM Plex Mono',monospace">32萬戶</span></div>
+            <div class="bar-track"><div class="bar-fill" style="--w:14%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div>
+          </div>
+          <div style="font-size:11px;color:var(--fg-m);margin-top:10px;opacity:.7">資料來源：金管會 2025 Q4 統計</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:22px;margin-bottom:12px">⚔️</div>
+        <h4 style="margin-bottom:12px;color:var(--fg-m)">Bankee vs 主要競爭對手</h4>
+        <div class="tbl-wrap" style="border-radius:8px">
+          <table>
+            <thead><tr><th>指標</th><th>Bankee</th><th>市場最強</th></tr></thead>
+            <tbody>
+              <tr><td>新戶利率</td><td style="color:var(--green)">2.6%</td><td style="color:var(--fg-m)">聯邦 15%（1月）</td></tr>
+              <tr><td>舊戶利率</td><td style="color:var(--orange)">1.435% ∞</td><td style="color:var(--fg-m)">王道 2.1%</td></tr>
+              <tr><td>跨轉次數</td><td style="color:var(--red)">6次/月</td><td style="color:var(--fg-m)">元大 99次</td></tr>
+              <tr><td>虛擬資產</td><td style="color:var(--green)">✓ 90%+市占</td><td style="color:var(--fg-m)">— 無對手</td></tr>
+              <tr><td>社群機制</td><td style="color:var(--green)">✓ 專利</td><td style="color:var(--fg-m)">— 無對手</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:22px;margin-bottom:12px">📊</div>
+        <h4 style="margin-bottom:12px;color:var(--fg-m)">2025 市場關鍵趨勢</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <span style="color:var(--red);font-size:18px;flex-shrink:0">↗</span>
+            <div><div style="font-size:13px;font-weight:600">利率競爭白熱化</div><div style="font-size:12px;color:var(--fg-m)">聯邦、王道首月15%砸錢搶客</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <span style="color:var(--blue,#60a5fa);font-size:18px;flex-shrink:0">🔗</span>
+            <div><div style="font-size:13px;font-weight:600">生態圈綁定加速</div><div style="font-size:12px;color:var(--fg-m)">LINE Pay × 全聯 × 樂天市場</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <span style="color:var(--purple);font-size:18px;flex-shrink:0">🤖</span>
+            <div><div style="font-size:13px;font-weight:600">AI 理財功能普及</div><div style="font-size:12px;color:var(--fg-m)">台新小查罐自動存款崛起</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <span style="color:var(--green);font-size:18px;flex-shrink:0">📱</span>
+            <div><div style="font-size:13px;font-weight:600">跨轉次數戰</div><div style="font-size:12px;color:var(--fg-m)">元大 99 次 vs 郵局 66 次</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <span style="color:var(--orange);font-size:18px;flex-shrink:0">₿</span>
+            <div><div style="font-size:13px;font-weight:600">虛擬資產法制化</div><div style="font-size:12px;color:var(--fg-m)">金管會 VASP 登記開跑</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>核心洞察：</strong>在所有競爭者都搶同一塊「高利率、轉帳次數」的紅海時，Bankee 握有兩片<strong style="color:var(--orange)">藍海</strong>——虛擬資產金流霸主地位，以及全球唯一有專利的社群銀行模型。這才是行銷突圍的起點。
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MOAT -->
+<section id="moat">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 核心護城河</div>
+    <h2 style="margin-bottom:12px">三張競爭者無法複製的王牌</h2>
+    <p style="max-width:680px;margin-bottom:48px">行銷的最強基底是真實的差異。以下三點是 Bankee 獨有、且難以被複製的競爭壁壘。</p>
+
+    <div style="display:flex;flex-direction:column;gap:24px">
+
+      <!-- moat 1 -->
+      <div class="card card-orange" style="display:flex;gap:24px;align-items:flex-start">
+        <div style="width:56px;height:56px;border-radius:12px;background:rgba(249,115,22,0.2);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">₿</div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap">
+            <h3>虛擬資產金流霸主</h3>
+            <span class="tag tag-orange">獨家 · 難以複製</span>
+          </div>
+          <p style="margin-bottom:16px">自 2019 年起深耕，目前掌握台灣 <strong style="color:var(--orange);font-size:18px">90%+</strong> 的虛擬資產出入金市場。3 秒完成法幣轉虛擬資產。其他銀行因合規顧慮不敢進場，Bankee 已建立難以追趕的技術與信任護城河。</p>
+          <div class="grid-3">
+            <div style="background:rgba(249,115,22,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:22px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--orange)">2019</div>
+              <div style="font-size:11px;color:var(--fg-m)">率先進場年份</div>
+            </div>
+            <div style="background:rgba(249,115,22,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:22px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--orange)">3秒</div>
+              <div style="font-size:11px;color:var(--fg-m)">法幣轉加密平均時間</div>
+            </div>
+            <div style="background:rgba(249,115,22,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:22px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--orange)">62.7%</div>
+              <div style="font-size:11px;color:var(--fg-m)">台灣民眾持有虛擬資產（2025調查）</div>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:12px;color:var(--fg-m)">📑 資料來源：遠東商銀《2025 虛擬資產調查報告》、CNA 中央社、聯合新聞網</div>
+        </div>
+      </div>
+
+      <!-- moat 2 -->
+      <div class="card card-green" style="display:flex;gap:24px;align-items:flex-start">
+        <div style="width:56px;height:56px;border-radius:12px;background:rgba(34,197,94,0.2);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">👥</div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap">
+            <h3>專利社群圈病毒引擎</h3>
+            <span class="tag tag-green">專利保護 · 全球唯一</span>
+          </div>
+          <p style="margin-bottom:16px">「社群圈」機制受專利保護，每位用戶都是線上分行經理（圈主），邀請好友（圈友）即可享加碼利率。圈主最高年被動收入 <strong style="color:var(--green)">13 萬元</strong>，最大社群圈存款規模近 <strong style="color:var(--green)">2 億元</strong>。這是利潤共享模型，而非傳統廣告。</p>
+          <div class="grid-4">
+            <div style="background:rgba(34,197,94,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:20px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--green)">4萬+</div>
+              <div style="font-size:11px;color:var(--fg-m)">現有圈主數</div>
+            </div>
+            <div style="background:rgba(34,197,94,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:20px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--green)">+1,000</div>
+              <div style="font-size:11px;color:var(--fg-m)">每季新增線上分行</div>
+            </div>
+            <div style="background:rgba(34,197,94,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:20px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--green)">13萬</div>
+              <div style="font-size:11px;color:var(--fg-m)">圈主最高年被動收入</div>
+            </div>
+            <div style="background:rgba(34,197,94,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:20px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--green)">~2億</div>
+              <div style="font-size:11px;color:var(--fg-m)">最大單一圈存款規模</div>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:12px;color:var(--fg-m)">📑 資料來源：中央社 CNA 2025/02/08、數位時代 BusinessNext、遠東集團新聞稿</div>
+        </div>
+      </div>
+
+      <!-- moat 3 -->
+      <div class="card card-purple" style="display:flex;gap:24px;align-items:flex-start">
+        <div style="width:56px;height:56px;border-radius:12px;background:rgba(167,139,250,0.2);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">⚡</div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap">
+            <h3>挑戰型信貸：業界首創</h3>
+            <span class="tag tag-purple">顛覆借貸 · 無職業歧視</span>
+          </div>
+          <p style="margin-bottom:16px">「貸你存」挑戰型信貸打破傳統信貸的職業歧視定價邏輯——不需財力證明，只要每月準時還款，<strong style="color:var(--purple)">貸款結清後返還 50% 已繳利息</strong>。2M 元貸款可退回 ~207,084 元。這讓借錢變成存錢，是全台第一。</p>
+          <div class="grid-3">
+            <div style="background:rgba(167,139,250,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:20px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--purple)">50%</div>
+              <div style="font-size:11px;color:var(--fg-m)">利息回饋比例</div>
+            </div>
+            <div style="background:rgba(167,139,250,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:20px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--purple)">700萬</div>
+              <div style="font-size:11px;color:var(--fg-m)">最高貸款額度</div>
+            </div>
+            <div style="background:rgba(167,139,250,0.08);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:20px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--purple)">4%起</div>
+              <div style="font-size:11px;color:var(--fg-m)">信貸利率（全台平均 5.41%）</div>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:12px;color:var(--fg-m)">📑 資料來源：遠東集團新聞稿、Money101、聯合新聞網 2025</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STRATEGIES -->
+<section id="strategies">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 五大行銷突圍策略</div>
+    <h2 style="margin-bottom:12px">從王牌出發的五條勝利路徑</h2>
+    <p style="max-width:700px;margin-bottom:48px">每一條策略都建立在 Bankee 獨有優勢上，而非與競爭者在同一戰場硬拼。</p>
+
+    <!-- Strategy 1 -->
+    <div class="card" style="margin-bottom:20px;border-color:rgba(249,115,22,0.3)">
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <div class="strat-num" style="background:rgba(249,115,22,0.15);color:var(--orange)">01</div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+            <h3>虛擬資產藍海行銷</h3>
+            <span class="tag tag-orange">最高優先</span>
+            <span class="tag tag-orange">2025 VASP 法制化時機</span>
+          </div>
+          <p style="margin-bottom:20px">台灣每三位成年人就有近兩位持有虛擬資產（62.7%），其中 82.7% 有獲利記錄。而在所有台灣銀行中，<strong style="color:var(--fg)">只有 Bankee 敢接虛擬資產金流</strong>，且已掌握 90%+ 市占。隨著金管會 VASP 登記制度正式上路，市場正等待一個「幣圈首選銀行」的品牌站出來。</p>
+          <div class="grid-3" style="margin-bottom:20px">
+            <div class="card" style="padding:16px;background:rgba(249,115,22,0.06)">
+              <div style="font-size:11px;color:var(--fg-m);margin-bottom:6px">📊 市場規模（估算）</div>
+              <div style="font-size:16px;font-weight:700;color:var(--orange)">600萬+</div>
+              <div style="font-size:12px;color:var(--fg-m)">台灣虛擬資產持有者<br>（62.7% × 成年人口）</div>
+            </div>
+            <div class="card" style="padding:16px;background:rgba(249,115,22,0.06)">
+              <div style="font-size:11px;color:var(--fg-m);margin-bottom:6px">💰 高價值用戶</div>
+              <div style="font-size:16px;font-weight:700;color:var(--orange)">30%</div>
+              <div style="font-size:12px;color:var(--fg-m)">持有虛擬資產逾<br>100萬元（2025調查）</div>
+            </div>
+            <div class="card" style="padding:16px;background:rgba(249,115,22,0.06)">
+              <div style="font-size:11px;color:var(--fg-m);margin-bottom:6px">🔑 Bankee 優勢</div>
+              <div style="font-size:16px;font-weight:700;color:var(--orange)">唯一</div>
+              <div style="font-size:12px;color:var(--fg-m)">提供穩定大額虛擬<br>資產出入金的銀行</div>
+            </div>
+          </div>
+          <div class="callout-orange callout" style="border-left-color:var(--orange)">
+            <strong>建議行銷動作：</strong>主打「幣圈首選銀行」定位，推出「加密出入金零延遲、最高單日 500 萬」主題廣告，在 Twitter(X)、Dcard、PTT 幣圈版發動 KOL 合作；同步推出「Bankee × VASP」聯合品牌活動，趁法制化初期建立心智佔位。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strategy 2 -->
+    <div class="card" style="margin-bottom:20px;border-color:rgba(34,197,94,0.3)">
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <div class="strat-num" style="background:rgba(34,197,94,0.15);color:var(--green)">02</div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+            <h3>社群圈 × 推薦裂變行銷</h3>
+            <span class="tag tag-green">最高優先</span>
+            <span class="tag tag-green">零邊際成本獲客</span>
+          </div>
+          <p style="margin-bottom:20px">傳統行銷靠廣告買流量，Bankee 靠用戶買用戶。社群圈的專利機制讓每一位圈主都成為銷售員，<strong style="color:var(--fg)">毛利的 40% 直接回饋給用戶</strong>，比付廣告費更有效率。關鍵是讓「分行經理」這個身份更有面子、更好用。</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+            <div>
+              <h4 style="margin-bottom:12px;color:var(--fg-m)">現有圈主分層（2025 Q1）</h4>
+              <div class="bar-wrap">
+                <div class="bar-label"><span>微型（1 人）</span><span style="color:var(--fg-m)">5萬+家</span></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:90%;background:var(--green)"></div></div>
+              </div>
+              <div class="bar-wrap">
+                <div class="bar-label"><span>小型（2-9 人）</span><span style="color:var(--fg-m)">3萬+家</span></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:60%;background:var(--green)"></div></div>
+              </div>
+              <div class="bar-wrap">
+                <div class="bar-label"><span>中型（10-99 人）</span><span style="color:var(--fg-m)">~24家</span></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:10%;background:var(--green)"></div></div>
+              </div>
+              <div class="bar-wrap">
+                <div class="bar-label"><span>大型（100+ 人）</span><span style="color:var(--fg-m)">稀少</span></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:3%;background:var(--green)"></div></div>
+              </div>
+            </div>
+            <div>
+              <h4 style="margin-bottom:12px;color:var(--fg-m)">飛輪效應示意</h4>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;gap:10px;background:rgba(34,197,94,0.06);border-radius:8px;padding:10px">
+                  <span style="font-size:18px">1️⃣</span><div style="font-size:12px">用戶加入 → 享 2.6% 高利</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;background:rgba(34,197,94,0.06);border-radius:8px;padding:10px">
+                  <span style="font-size:18px">2️⃣</span><div style="font-size:12px">邀請朋友 → 成為圈主</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;background:rgba(34,197,94,0.06);border-radius:8px;padding:10px">
+                  <span style="font-size:18px">3️⃣</span><div style="font-size:12px">圈友存款越多 → 圈主加碼越高</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;background:rgba(34,197,94,0.08);border-radius:8px;padding:10px;border:1px solid rgba(34,197,94,0.2)">
+                  <span style="font-size:18px">4️⃣</span><div style="font-size:12px;color:var(--green);font-weight:600">圈主年收 13 萬 → 主動推廣</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="callout callout-green">
+            <strong>建議行銷動作：</strong>推出「Bankee 分行經理大賽」排行榜活動；與 YouTuber、理財 KOL 合作展示圈主收入；製作「30 歲開了自己的銀行分行」病毒短影音系列，鎖定 IG Reels、TikTok。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strategy 3 -->
+    <div class="card" style="margin-bottom:20px;border-color:rgba(167,139,250,0.3)">
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <div class="strat-num" style="background:rgba(167,139,250,0.15);color:var(--purple)">03</div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+            <h3>挑戰型信貸：公平金融 PR</h3>
+            <span class="tag tag-purple">中優先</span>
+            <span class="tag tag-purple">社會話題 × PR 機會</span>
+          </div>
+          <p style="margin-bottom:20px">台灣信貸市場存在職業歧視問題——自僱者、接案族、新鮮人即使還款記錄良好，也被貼上高風險標籤。Bankee「貸你存」打破此慣例，<strong style="color:var(--fg)">讓守信用的行為被量化、被看見、被獎勵</strong>。這是強烈的社會公平議題，有極高 PR 傳播潛力。</p>
+          <div class="grid-3" style="margin-bottom:20px">
+            <div class="card" style="padding:16px;background:rgba(167,139,250,0.05)">
+              <div style="font-size:24px;margin-bottom:8px">⚖️</div>
+              <h4 style="margin-bottom:6px">公平定價</h4>
+              <p style="font-size:12px">不依職業類別判斷風險，<br>只看實際還款行為</p>
+            </div>
+            <div class="card" style="padding:16px;background:rgba(167,139,250,0.05)">
+              <div style="font-size:24px;margin-bottom:8px">💰</div>
+              <h4 style="margin-bottom:6px">50% 利息回饋</h4>
+              <p style="font-size:12px">2百萬元貸款期滿<br>退回約 20.7 萬元</p>
+            </div>
+            <div class="card" style="padding:16px;background:rgba(167,139,250,0.05)">
+              <div style="font-size:24px;margin-bottom:8px">📱</div>
+              <h4 style="margin-bottom:6px">24小時線上申辦</h4>
+              <p style="font-size:12px">免財力證明、<br>免臨櫃、最快當日核撥</p>
+            </div>
+          </div>
+          <div class="callout" style="border-left-color:var(--purple);background:rgba(167,139,250,0.06)">
+            <strong>建議行銷動作：</strong>「#借錢也能存錢」挑戰賽 + 真人故事影片系列（自由接案者、護士、新鮮人的還款故事）；聯合新媒體做職業歧視信貸議題報導，以社會運動包裝金融產品。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strategy 4 -->
+    <div class="card" style="margin-bottom:20px;border-color:rgba(37,99,235,0.3)">
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <div class="strat-num" style="background:rgba(37,99,235,0.15);color:#60a5fa">04</div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+            <h3>遠東集團生態圈整合</h3>
+            <span class="tag tag-blue">中優先</span>
+            <span class="tag tag-blue">集團資產變現</span>
+          </div>
+          <p style="margin-bottom:20px">競爭者用 LINE Pay、全聯 PX Pay 建立消費生態圈，Bankee 的遠東集團母公司坐擁龐大零售資產卻尚未充分整合。這是 Bankee 可以複製「生態圈黏著策略」卻用自家資源的機會。</p>
+          <div class="grid-4" style="margin-bottom:20px">
+            <div style="text-align:center;padding:16px;background:rgba(37,99,235,0.06);border-radius:10px;border:1px solid rgba(37,99,235,0.15)">
+              <div style="font-size:24px;margin-bottom:6px">🏬</div>
+              <div style="font-weight:600;font-size:13px">遠東 SOGO</div>
+              <div style="font-size:11px;color:var(--fg-m)">全台 7 間百貨</div>
+            </div>
+            <div style="text-align:center;padding:16px;background:rgba(37,99,235,0.06);border-radius:10px;border:1px solid rgba(37,99,235,0.15)">
+              <div style="font-size:24px;margin-bottom:6px">📱</div>
+              <div style="font-weight:600;font-size:13px">遠傳電信</div>
+              <div style="font-size:11px;color:var(--fg-m)">900萬+ 用戶</div>
+            </div>
+            <div style="text-align:center;padding:16px;background:rgba(37,99,235,0.06);border-radius:10px;border:1px solid rgba(37,99,235,0.15)">
+              <div style="font-size:24px;margin-bottom:6px">🛒</div>
+              <div style="font-weight:600;font-size:13px">愛買</div>
+              <div style="font-size:11px;color:var(--fg-m)">北部量販</div>
+            </div>
+            <div style="text-align:center;padding:16px;background:rgba(37,99,235,0.06);border-radius:10px;border:1px solid rgba(37,99,235,0.15)">
+              <div style="font-size:24px;margin-bottom:6px">🏨</div>
+              <div style="font-weight:600;font-size:13px">遠東集團酒店</div>
+              <div style="font-size:11px;color:var(--fg-m)">台灣+亞洲據點</div>
+            </div>
+          </div>
+          <div class="callout">
+            <strong>建議行銷動作：</strong>推出「遠東生活圈」聯名優惠——Bankee 存款滿額享 SOGO 禮券、遠傳月租折抵、愛買消費加碼；對標 LINE Bank 的 LINE Pay，打造「遠東族的一站式金融帳戶」定位。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strategy 5 -->
+    <div class="card" style="border-color:rgba(234,179,8,0.3)">
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <div class="strat-num" style="background:rgba(234,179,8,0.15);color:var(--yellow)">05</div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+            <h3>Z 世代金融教育 × 內容行銷</h3>
+            <span class="tag tag-yellow">長線策略</span>
+            <span class="tag tag-yellow">品牌底層建設</span>
+          </div>
+          <p style="margin-bottom:20px">Z 世代（1997–2012 年生）是台灣數位帳戶未來五年最大成長族群，其中 75% 以智慧型手機為主要上網工具（IBM 研究）。這個族群對理財投資高度興趣但需要引導，是高 LTV（用戶終身價值）的品牌建設目標。</p>
+          <div class="grid-3" style="margin-bottom:20px">
+            <div class="card" style="padding:16px;background:rgba(234,179,8,0.05)">
+              <div style="font-size:11px;color:var(--fg-m);margin-bottom:4px">IBM 研究數據</div>
+              <div style="font-size:22px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--yellow)">75%</div>
+              <div style="font-size:12px;color:var(--fg-m)">Z世代以手機為<br>主要上網設備</div>
+            </div>
+            <div class="card" style="padding:16px;background:rgba(234,179,8,0.05)">
+              <div style="font-size:11px;color:var(--fg-m);margin-bottom:4px">市場潛力</div>
+              <div style="font-size:22px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--yellow)">30兆</div>
+              <div style="font-size:12px;color:var(--fg-m)">Z世代全球即將<br>掌握的財富（美元）</div>
+            </div>
+            <div class="card" style="padding:16px;background:rgba(234,179,8,0.05)">
+              <div style="font-size:11px;color:var(--fg-m);margin-bottom:4px">台灣Z世代偏好</div>
+              <div style="font-size:22px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--yellow)">謹慎</div>
+              <div style="font-size:12px;color:var(--fg-m)">熱衷理財投資<br>但重視風險管理</div>
+            </div>
+          </div>
+          <div class="callout" style="border-left-color:var(--yellow);background:rgba(234,179,8,0.06)">
+            <strong>建議行銷動作：</strong>「Bankee 幣學院」YouTube 系列（每集 5 分鐘理財 + 虛擬資產入門）；在 Dcard 設立官方帳號做年輕人金融 Q&A；與理財型 KOL 共創內容，以教育換信任，再導流開戶。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TARGET PERSONAS -->
+<section id="personas">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 目標族群分析</div>
+    <h2 style="margin-bottom:12px">四大高價值用戶畫像</h2>
+    <p style="max-width:680px;margin-bottom:48px">Bankee 的差異化優勢對以下族群有最強的吸引力，應優先以這四類用戶為行銷核心。</p>
+
+    <div class="grid-2">
+
+      <div class="card" style="border-color:rgba(249,115,22,0.3)">
+        <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px">
+          <div class="persona-avatar" style="background:rgba(249,115,22,0.15)">₿</div>
+          <div>
+            <h3 style="margin-bottom:4px">幣圈 Emily</h3>
+            <div style="font-size:13px;color:var(--fg-m)">28 歲 · 科技業 · 月收 6 萬</div>
+            <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">
+              <span class="tag tag-orange">虛擬資產持有者</span>
+              <span class="tag tag-orange">高頻出入金</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px;margin-bottom:14px">持有 BTC、ETH、穩定幣，每月至少出入金 2-3 次，金額 5-50 萬不等。她最需要的是<strong style="color:var(--fg)">穩定、快速、單日高額度的法幣通道</strong>，不想因為銀行風控被卡單。</p>
+        <div class="callout-orange callout" style="font-size:12px">
+          <strong>對 Bankee 的價值：</strong>每月出入金用戶，高 ARPU（每用戶平均收益）。對應策略 01，是最直接的獲客目標。
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(34,197,94,0.3)">
+        <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px">
+          <div class="persona-avatar" style="background:rgba(34,197,94,0.15)">👑</div>
+          <div>
+            <h3 style="margin-bottom:4px">社群圈主 Kevin</h3>
+            <div style="font-size:13px;color:var(--fg-m)">32 歲 · 業務員 · 社交達人</div>
+            <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">
+              <span class="tag tag-green">KOL型用戶</span>
+              <span class="tag tag-green">裂變節點</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px;margin-bottom:14px">職業特性讓他擁有龐大人脈，已邀請 40+ 位朋友加入圈，目前帳戶年被動利息收入約 4 萬元。他把「開分行」當作副業在經營，只要<strong style="color:var(--fg)">工具更好用、榮譽感更強</strong>就能繼續成長。</p>
+        <div class="callout-green callout" style="font-size:12px">
+          <strong>對 Bankee 的價值：</strong>一個 Kevin 帶來 40+ 用戶，是最高 ROI 的行銷通路。對應策略 02，應設計專屬圈主成就系統。
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(167,139,250,0.3)">
+        <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px">
+          <div class="persona-avatar" style="background:rgba(167,139,250,0.15)">💼</div>
+          <div>
+            <h3 style="margin-bottom:4px">被歧視借款人 Lisa</h3>
+            <div style="font-size:13px;color:var(--fg-m)">35 歲 · 自由接案 · 收入穩定但不規律</div>
+            <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">
+              <span class="tag tag-purple">信貸需求者</span>
+              <span class="tag tag-purple">傳統銀行拒貸族</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px;margin-bottom:14px">月收入 6-10 萬，但以「自由業」身份申請信貸屢遭高利率或拒件。她的實際還款記錄完美，只是職業類別讓系統打了折扣。<strong style="color:var(--fg)">挑戰型信貸讓她終於被公平對待。</strong></p>
+        <div class="callout" style="font-size:12px;border-left-color:var(--purple);background:rgba(167,139,250,0.06)">
+          <strong>對 Bankee 的價值：</strong>貸款客戶直接創造利息收入，且口碑傳播強。對應策略 03，真人故事 PR 效果極佳。
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(37,99,235,0.3)">
+        <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px">
+          <div class="persona-avatar" style="background:rgba(37,99,235,0.15)">💰</div>
+          <div>
+            <h3 style="margin-bottom:4px">大額存款戶 Derek</h3>
+            <div style="font-size:13px;color:var(--fg-m)">45 歲 · 中階主管 · 資產 500 萬+</div>
+            <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">
+              <span class="tag tag-blue">大額存款</span>
+              <span class="tag tag-blue">無上限利率訴求</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px;margin-bottom:14px">有 300-500 萬活存資金等待停泊，不追求短期高利噱頭，更在意<strong style="color:var(--fg)">長期穩定、無上限的利率</strong>。Bankee 的 1.435% 無上限基本利率在市場上是獨特的，其他銀行高利率都有存款上限。</p>
+        <div class="callout" style="font-size:12px">
+          <strong>對 Bankee 的價值：</strong>高存款餘額直接提升 AUM，且流失率低。訴求「無上限穩定存款」，與高利短打策略做反差定位。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CAMPAIGNS -->
+<section id="campaigns">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 具體行銷提案</div>
+    <h2 style="margin-bottom:12px">五個可立即執行的行銷戰役</h2>
+    <p style="max-width:680px;margin-bottom:48px">每個提案都對應一個核心護城河，設計為可病毒傳播的話題行動。</p>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <div class="card" style="display:flex;gap:20px;align-items:flex-start">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(249,115,22,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">₿</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <h4>「幣你贏」Campaign</h4>
+            <span class="tag tag-orange">Q2 2026</span>
+            <span class="tag tag-orange">虛擬資產</span>
+          </div>
+          <p style="font-size:13px">主打「台灣幣圈唯一信任的銀行」。KOL 開箱實測 3 秒出入金體驗；與幣託、MAX、BitoEX 等交易所共同行銷；X(Twitter) 幣圈話題標籤挑戰賽，送 USDT 獎勵。核心 KPI：新增幣圈用戶開戶率、平均出入金金額。</p>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex;gap:20px;align-items:flex-start">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🏆</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <h4>「分行經理排行榜」年度挑戰</h4>
+            <span class="tag tag-green">全年滾動</span>
+            <span class="tag tag-green">社群圈</span>
+          </div>
+          <p style="font-size:13px">公開全台圈主排行榜（匿名），依圈友人數、存款量分季公布。頂尖圈主獲邀參加「Bankee 分行經理年會」實體活動，媒體曝光。每季前三名圈主額外獎勵。核心 KPI：圈主轉換率、圈友留存率。</p>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex;gap:20px;align-items:flex-start">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(167,139,250,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">⚖️</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <h4>「公平信貸」社會運動式行銷</h4>
+            <span class="tag tag-purple">Q3 2026</span>
+            <span class="tag tag-purple">挑戰型信貸</span>
+          </div>
+          <p style="font-size:13px">真人故事影片：護士、街頭藝術家、自由譯者分享被拒貸又被 Bankee 接住的故事。聯合財經媒體（天下、商周）推出「台灣信貸不公平真相」深度報導，Bankee 以解方登場。話題標籤 #還我公平信貸。核心 KPI：信貸申請量、媒體自然轉載數。</p>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex;gap:20px;align-items:flex-start">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(37,99,235,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🏬</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <h4>「遠東生活圈」集團聯名季</h4>
+            <span class="tag tag-blue">Q4 2026</span>
+            <span class="tag tag-blue">生態圈整合</span>
+          </div>
+          <p style="font-size:13px">雙11/年末購物季，Bankee 帳戶消費 SOGO 享額外 5% 回饋、遠傳費率折抵、愛買消費加碼。用集團資源做差異化，對標 LINE Bank 的 LINE Pay 整合策略，主打「遠東族的最強帳戶」。核心 KPI：集團聯名消費金額、跨產品使用率。</p>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex;gap:20px;align-items:flex-start">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(234,179,8,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🎓</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            <h4>「Bankee 幣學院」內容行銷長尾計畫</h4>
+            <span class="tag tag-yellow">全年長線</span>
+            <span class="tag tag-yellow">Z世代</span>
+          </div>
+          <p style="font-size:13px">每週一集 YouTube 短影音（5 分鐘）：第一季主題「幣圈新手存活指南」、第二季「30歲前做到這件事」、第三季「開自己的線上分行」。Dcard 官方帳號每日互動，建立年輕用戶信任。核心 KPI：SEO 自然流量、YouTube 訂閱數、從影片到開戶轉換率。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SWOT MARKETING -->
+<section style="padding:80px 0;background:var(--bg-e)">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 行銷視角 SWOT</div>
+    <h2 style="margin-bottom:48px">從行銷面重新定義 SWOT</h2>
+    <div class="grid-2">
+      <div class="card card-green">
+        <h4 style="color:var(--green);margin-bottom:16px">✅ 行銷優勢（Strengths）</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span>🔐</span><div style="font-size:13px"><strong>專利社群圈</strong> — 競品無法複製的病毒傳播引擎</div></div>
+          <div style="display:flex;gap:10px"><span>₿</span><div style="font-size:13px"><strong>虛擬資產話語權</strong> — 90%+ 市占 = 無對手的利基 PR</div></div>
+          <div style="display:flex;gap:10px"><span>🏆</span><div style="font-size:13px"><strong>國際獎項背書</strong> — 3 個 2025 全球大獎建立公信力</div></div>
+          <div style="display:flex;gap:10px"><span>💰</span><div style="font-size:13px"><strong>無上限利率</strong> — 1.435% ∞ 鎖定大額存款戶</div></div>
+          <div style="display:flex;gap:10px"><span>🏢</span><div style="font-size:13px"><strong>遠東集團資產</strong> — 未充分使用的行銷彈藥庫</div></div>
+        </div>
+      </div>
+      <div class="card card-red">
+        <h4 style="color:var(--red);margin-bottom:16px">❌ 行銷劣勢（Weaknesses）</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span>📣</span><div style="font-size:13px"><strong>品牌聲量低</strong> — 缺乏爆款行銷事件，年輕族群首選率弱</div></div>
+          <div style="display:flex;gap:10px"><span>🔄</span><div style="font-size:13px"><strong>跨轉次數（6次）</strong> — 用戶最大痛點，影響日常轉帳族群</div></div>
+          <div style="display:flex;gap:10px"><span>📉</span><div style="font-size:13px"><strong>舊戶利率（1.435%）</strong> — 低於多家競爭者，留客難度高</div></div>
+          <div style="display:flex;gap:10px"><span>🤝</span><div style="font-size:13px"><strong>社群圈門檻感</strong> — 孤立用戶難享完整優惠，流失風險</div></div>
+          <div style="display:flex;gap:10px"><span>💳</span><div style="font-size:13px"><strong>簽帳卡回饋競爭力</strong> — 未進台灣市場前五名</div></div>
+        </div>
+      </div>
+      <div class="card card-accent">
+        <h4 style="color:#60a5fa;margin-bottom:16px">🚀 行銷機會（Opportunities）</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span>🌏</span><div style="font-size:13px"><strong>VASP 法制化</strong> — 2025 年最佳時機搶占幣圈銀行定位</div></div>
+          <div style="display:flex;gap:10px"><span>📈</span><div style="font-size:13px"><strong>Z世代財富崛起</strong> — 全球 Z 世代將掌握近 30 兆美元財富</div></div>
+          <div style="display:flex;gap:10px"><span>🎯</span><div style="font-size:13px"><strong>信貸市場結構性痛點</strong> — 職業歧視問題普遍，公平信貸訴求強</div></div>
+          <div style="display:flex;gap:10px"><span>🤖</span><div style="font-size:13px"><strong>AI 理財趨勢</strong> — 率先整合 AI 工具可快速差異化</div></div>
+          <div style="display:flex;gap:10px"><span>📱</span><div style="font-size:13px"><strong>短影音爆紅</strong> — IG Reels、TikTok 金融內容市場尚未飽和</div></div>
+        </div>
+      </div>
+      <div class="card card-yellow">
+        <h4 style="color:var(--yellow);margin-bottom:16px">⚠️ 行銷威脅（Threats）</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span>💸</span><div style="font-size:13px"><strong>利率軍備競賽</strong> — 聯邦、王道首月 15% 難以匹敵</div></div>
+          <div style="display:flex;gap:10px"><span>📡</span><div style="font-size:13px"><strong>生態圈缺口</strong> — LINE Bank 的 LINE Pay 黏著力極強</div></div>
+          <div style="display:flex;gap:10px"><span>📊</span><div style="font-size:13px"><strong>成長放緩市場</strong> — 年增率創九年新低，獲客成本上升</div></div>
+          <div style="display:flex;gap:10px"><span>🏦</span><div style="font-size:13px"><strong>純網銀燒錢</strong> — 三家累虧 85 億，拉高行業行銷預算門檻</div></div>
+          <div style="display:flex;gap:10px"><span>⚖️</span><div style="font-size:13px"><strong>法規變動</strong> — VASP 合規要求若收緊可能影響優勢</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 得獎認可</div>
+    <h2 style="margin-bottom:12px">國際背書，行銷公信力的彈藥</h2>
+    <p style="max-width:680px;margin-bottom:48px">得獎紀錄是行銷材料中最有力的第三方佐證，應在所有溝通中主動標榜。</p>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <div class="award-badge" style="border-color:rgba(234,179,8,0.3);background:rgba(234,179,8,0.05)">
+        <div class="award-icon">🏅</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap">
+            <h4>Global Finance — World's Best Digital Banks 2025</h4>
+            <span class="tag tag-yellow">2025</span>
+          </div>
+          <div style="font-size:13px;color:var(--fg-m);margin-bottom:6px">《全球金融雜誌》（創立 1987 年，全球最具公信力金融媒體之一）三項大獎：</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="pill">Most Innovative Digital Bank — Asia-Pacific</span>
+            <span class="pill">Best Bank for Embedded Finance — Taiwan</span>
+            <span class="pill">Most Innovative Digital Bank — Taiwan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-badge" style="border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.05)">
+        <div class="award-icon">🌍</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap">
+            <h4>The Global Economics — Global Economics Awards 2025</h4>
+            <span class="tag tag-purple">2025</span>
+          </div>
+          <div style="font-size:13px;color:var(--fg-m);margin-bottom:6px">英國權威財經媒體，Bankee 榮獲：</div>
+          <span class="pill">Most Innovative Digital Bank（最佳創新數位銀行）</span>
+        </div>
+      </div>
+
+      <div class="award-badge" style="border-color:rgba(37,99,235,0.3);background:rgba(37,99,235,0.05)">
+        <div class="award-icon">⛓️</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap">
+            <h4>The Digital Banker — Global BankTech Awards 2025</h4>
+            <span class="tag tag-blue">2025</span>
+          </div>
+          <div style="font-size:13px;color:var(--fg-m);margin-bottom:6px">國際數位銀行權威媒體獎項：</div>
+          <span class="pill">Best Blockchain Technology Partner for Retail Banks</span>
+        </div>
+      </div>
+
+      <div class="award-badge">
+        <div class="award-icon">🌟</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap">
+            <h4>FinTech Futures — Banking Tech Awards 2023</h4>
+            <span class="tag" style="background:rgba(255,255,255,0.06);color:var(--fg-m)">2023</span>
+          </div>
+          <div style="font-size:13px;color:var(--fg-m);margin-bottom:6px">英國 FinTech Futures 舉辦的全球金融科技獎：</div>
+          <span class="pill">Highly Commended — Best Mobile Banking Innovation（高度推薦）</span>
+        </div>
+      </div>
+
+      <div class="award-badge" style="border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.05)">
+        <div class="award-icon">🥇</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap">
+            <h4>遠銀 Bankee — 台灣「商模創新」「技術創新」雙獎</h4>
+            <span class="tag tag-green">國內</span>
+          </div>
+          <div style="font-size:13px;color:var(--fg-m)">遠東商銀 Bankee 社群銀行勇奪商業模式創新與技術創新兩項國內肯定獎項。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 執行路線圖</div>
+    <h2 style="margin-bottom:12px">2026 行銷年度規劃</h2>
+    <p style="max-width:680px;margin-bottom:48px">四個季度，逐步建立 Bankee 的差異化行銷護城河。</p>
+
+    <div class="grid-2">
+      <div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--orange)"></div>
+            <div class="card" style="border-color:rgba(249,115,22,0.3);padding:20px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <span class="tag tag-orange">Q1 2026（1-3月）</span>
+                <span style="font-size:12px;color:var(--fg-m)">品牌定位</span>
+              </div>
+              <h4 style="margin-bottom:8px">「幣圈首選銀行」定位確立</h4>
+              <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--fg-m)">
+                <div>• 發布《2026 虛擬資產用戶白皮書》製造話題</div>
+                <div>• 與 3 大台灣交易所簽訂聯名行銷協議</div>
+                <div>• 官網改版：虛擬資產服務主視覺前置</div>
+                <div>• 幣圈 KOL 開箱合作（目標 20 位）</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--green)"></div>
+            <div class="card" style="border-color:rgba(34,197,94,0.3);padding:20px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <span class="tag tag-green">Q2 2026（4-6月）</span>
+                <span style="font-size:12px;color:var(--fg-m)">社群行銷</span>
+              </div>
+              <h4 style="margin-bottom:8px">社群圈裂變引擎升級</h4>
+              <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--fg-m)">
+                <div>• 推出「分行經理排行榜」公開競賽</div>
+                <div>• Dcard、PTT 官方帳號上線日常互動</div>
+                <div>• 「圈主工具箱」App 功能升級（自訂推薦頁）</div>
+                <div>• 目標：圈主數突破 6 萬</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--purple)"></div>
+            <div class="card" style="border-color:rgba(167,139,250,0.3);padding:20px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <span class="tag tag-purple">Q3 2026（7-9月）</span>
+                <span style="font-size:12px;color:var(--fg-m)">PR 行銷</span>
+              </div>
+              <h4 style="margin-bottom:8px">「公平信貸」社會議題 PR 衝刺</h4>
+              <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--fg-m)">
+                <div>• 發布真人故事微影片系列（6 集）</div>
+                <div>• 聯合商周、天下深度報導台灣信貸不公平問題</div>
+                <div>• #還我公平信貸 社群挑戰賽</div>
+                <div>• 信貸申請頁 A/B 測試優化轉換率</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:#60a5fa)"></div>
+            <div class="card" style="border-color:rgba(37,99,235,0.3);padding:20px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <span class="tag tag-blue">Q4 2026（10-12月）</span>
+                <span style="font-size:12px;color:var(--fg-m)">生態整合</span>
+              </div>
+              <h4 style="margin-bottom:8px">遠東集團聯名季 × 年末衝刺</h4>
+              <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--fg-m)">
+                <div>• 雙11 × 遠東 SOGO 聯名優惠活動</div>
+                <div>• 遠傳電信 × Bankee 綑綁方案上市</div>
+                <div>• 「Bankee 幣學院」YouTube 達 10 萬訂閱目標</div>
+                <div>• 年度成果發表 + 2027 白皮書預告</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI Table -->
+    <div style="margin-top:48px">
+      <h3 style="margin-bottom:20px">年度行銷 KPI 目標</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>指標</th>
+              <th>現況（估算）</th>
+              <th>2026 年底目標</th>
+              <th>對應策略</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>社群圈主數量</td>
+              <td style="color:var(--fg-m)">~4 萬</td>
+              <td style="color:var(--green);font-weight:600">6 萬+</td>
+              <td><span class="tag tag-green">社群裂變</span></td>
+            </tr>
+            <tr>
+              <td>虛擬資產出入金用戶數</td>
+              <td style="color:var(--fg-m)">不公開</td>
+              <td style="color:var(--orange);font-weight:600">YoY +50%</td>
+              <td><span class="tag tag-orange">幣圈策略</span></td>
+            </tr>
+            <tr>
+              <td>挑戰型信貸申請量</td>
+              <td style="color:var(--fg-m)">不公開</td>
+              <td style="color:var(--purple);font-weight:600">YoY +80%</td>
+              <td><span class="tag tag-purple">公平信貸</span></td>
+            </tr>
+            <tr>
+              <td>YouTube 訂閱數（幣學院）</td>
+              <td style="color:var(--fg-m)">0（新建）</td>
+              <td style="color:var(--yellow);font-weight:600">10 萬</td>
+              <td><span class="tag tag-yellow">內容行銷</span></td>
+            </tr>
+            <tr>
+              <td>品牌 NPS 分數</td>
+              <td style="color:var(--fg-m)">待調查</td>
+              <td style="color:#60a5fa;font-weight:600">+15 分</td>
+              <td><span class="tag tag-blue">整體品牌</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DATA SOURCES -->
+<section style="padding:60px 0;background:var(--bg-e)">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 數據來源</div>
+    <h3 style="margin-bottom:24px">權威資料來源索引</h3>
+    <div class="grid-2" style="gap:12px">
+      <div style="font-size:12px;color:var(--fg-m);display:flex;flex-direction:column;gap:8px">
+        <div>• 金融監督管理委員會銀行局 — 數位存款帳戶業務統計（2025 Q4）</div>
+        <div>• 聯合新聞網 — 「數位存款帳戶2025年達2819萬戶」</div>
+        <div>• 中央社 CNA — 「近4萬人升格分行經理」（2025/02/08）</div>
+        <div>• 數位時代 BusinessNext — Bankee 社群銀行策略分析</div>
+        <div>• 遠東集團新聞稿 — Bankee 里程碑、得獎報導</div>
+        <div>• 科技新報 TechNews — 三家純網銀累虧 85 億元（2025/08）</div>
+      </div>
+      <div style="font-size:12px;color:var(--fg-m);display:flex;flex-direction:column;gap:8px">
+        <div>• 遠東商銀《2025 虛擬資產調查報告》（正式發布版）</div>
+        <div>• Global Finance Magazine — World's Best Digital Banks 2025</div>
+        <div>• The Digital Banker — Global BankTech Awards 2025</div>
+        <div>• FinTech Futures — Banking Tech Awards 2023</div>
+        <div>• IBM Institute for Business Value — Z世代研究</div>
+        <div>• 遠見雜誌 — Z世代財富研究（82505 號報導）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:40px 0;border-top:1px solid var(--border)">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px">Bankee 行銷突圍戰略 2026</div>
+        <div style="font-size:12px;color:var(--fg-m)">基於公開數據與國際報告的獨立研究分析</div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:center">
+        <a href="/taiwan-digital-banking/" style="font-size:13px;color:var(--fg-m);text-decoration:none;border:1px solid var(--border);padding:8px 16px;border-radius:8px">← 回主報告</a>
+        <span style="font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--fg-m);opacity:.5">2026 Q1 · 數據截至 2025 Q4</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Animate bars when in view
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.querySelectorAll('.bar-fill').forEach(b => {
+        b.style.width = b.style.getPropertyValue('--w') || getComputedStyle(b).getPropertyValue('--w')
+      })
+    }
+  })
+}, {threshold: 0.1})
+document.querySelectorAll('.card, section').forEach(el => observer.observe(el))
+
+// Scroll animations for cards
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.style.opacity = '1'
+      e.target.style.transform = 'translateY(0)'
+    }
+  })
+}, {threshold: 0.05})
+
+document.querySelectorAll('.card').forEach(el => {
+  el.style.opacity = '0'
+  el.style.transform = 'translateY(16px)'
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease'
+  fadeObserver.observe(el)
+})
+</script>
+</body>
+</html>
